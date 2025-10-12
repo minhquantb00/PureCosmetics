@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Responses\" />
+    <ProjectReference Include="..\PureCosmetics.AuthService.Domain\PureCosmetics.AuthService.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PureCosmetics.AuthService.Domain\PureCosmetics.AuthService.Domain.csproj" />
+    <Folder Include="Validators\" />
+    <Folder Include="ServiceImplements\" />
   </ItemGroup>
 
 </Project>
