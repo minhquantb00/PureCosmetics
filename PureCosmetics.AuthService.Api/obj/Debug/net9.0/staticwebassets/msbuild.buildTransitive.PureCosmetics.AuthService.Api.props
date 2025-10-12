@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PureCosmetics.AuthService.Api.props" />
+</Project>

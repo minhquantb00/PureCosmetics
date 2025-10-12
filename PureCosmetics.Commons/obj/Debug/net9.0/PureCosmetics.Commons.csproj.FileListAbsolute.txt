@@ -1,0 +1,12 @@
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\bin\Debug\net9.0\PureCosmetics.Commons.deps.json
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\bin\Debug\net9.0\PureCosmetics.Commons.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\bin\Debug\net9.0\PureCosmetics.Commons.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.csproj.AssemblyReference.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.GeneratedMSBuildEditorConfig.editorconfig
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.AssemblyInfoInputs.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.AssemblyInfo.cs
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.csproj.CoreCompileInputs.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\refint\PureCosmetics.Commons.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\PureCosmetics.Commons.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.Commons\obj\Debug\net9.0\ref\PureCosmetics.Commons.dll

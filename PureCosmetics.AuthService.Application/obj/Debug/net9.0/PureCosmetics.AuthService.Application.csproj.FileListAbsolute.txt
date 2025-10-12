@@ -1,0 +1,17 @@
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.AuthService.Application.deps.json
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.AuthService.Application.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.AuthService.Application.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.AuthService.Domain.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.Commons.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.AuthService.Domain.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\bin\Debug\net9.0\PureCosmetics.Commons.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.csproj.AssemblyReference.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.AssemblyInfoInputs.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.AssemblyInfo.cs
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.csproj.CoreCompileInputs.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosm.82F82471.Up2Date
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\refint\PureCosmetics.AuthService.Application.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\PureCosmetics.AuthService.Application.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Application\obj\Debug\net9.0\ref\PureCosmetics.AuthService.Application.dll

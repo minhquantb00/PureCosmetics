@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{5F1BED1E-7098-42E6-8FB7-3D1825DADFD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{81C40AD5-90A2-4756-AC85-B3A3713A5DB0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{E45E0DAA-C8FE-4822-80F8-CBA109A8C63C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.AuthService.Api", "PureCosmetics.AuthService.Api\PureCosmetics.AuthService.Api.csproj", "{83525894-A2EE-4BD5-9F2F-78D866126869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.AuthService.Domain", "PureCosmetics.AuthService.Domain\PureCosmetics.AuthService.Domain.csproj", "{3EB1558F-265F-4C83-8273-EFAD4C39CC18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.AuthService.Application", "PureCosmetics.AuthService.Application\PureCosmetics.AuthService.Application.csproj", "{8E45FD70-097B-4C82-BF2E-838624D33A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.AuthService.Infrastructure", "PureCosmetics.AuthService.Infrastructure\PureCosmetics.AuthService.Infrastructure.csproj", "{80A2CE6F-269B-400E-8B2F-CE8476E1E900}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{071CEF9F-415C-4B00-A110-392C03E5405D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.Commons", "PureCosmetics.Commons\PureCosmetics.Commons.csproj", "{F40D7DD1-9F81-41E7-A739-D40F657CBE02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83525894-A2EE-4BD5-9F2F-78D866126869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83525894-A2EE-4BD5-9F2F-78D866126869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83525894-A2EE-4BD5-9F2F-78D866126869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83525894-A2EE-4BD5-9F2F-78D866126869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB1558F-265F-4C83-8273-EFAD4C39CC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB1558F-265F-4C83-8273-EFAD4C39CC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB1558F-265F-4C83-8273-EFAD4C39CC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB1558F-265F-4C83-8273-EFAD4C39CC18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E45FD70-097B-4C82-BF2E-838624D33A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E45FD70-097B-4C82-BF2E-838624D33A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E45FD70-097B-4C82-BF2E-838624D33A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E45FD70-097B-4C82-BF2E-838624D33A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A2CE6F-269B-400E-8B2F-CE8476E1E900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A2CE6F-269B-400E-8B2F-CE8476E1E900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A2CE6F-269B-400E-8B2F-CE8476E1E900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A2CE6F-269B-400E-8B2F-CE8476E1E900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40D7DD1-9F81-41E7-A739-D40F657CBE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40D7DD1-9F81-41E7-A739-D40F657CBE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40D7DD1-9F81-41E7-A739-D40F657CBE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40D7DD1-9F81-41E7-A739-D40F657CBE02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E45E0DAA-C8FE-4822-80F8-CBA109A8C63C} = {5F1BED1E-7098-42E6-8FB7-3D1825DADFD2}
+		{83525894-A2EE-4BD5-9F2F-78D866126869} = {E45E0DAA-C8FE-4822-80F8-CBA109A8C63C}
+		{3EB1558F-265F-4C83-8273-EFAD4C39CC18} = {E45E0DAA-C8FE-4822-80F8-CBA109A8C63C}
+		{8E45FD70-097B-4C82-BF2E-838624D33A6F} = {E45E0DAA-C8FE-4822-80F8-CBA109A8C63C}
+		{80A2CE6F-269B-400E-8B2F-CE8476E1E900} = {E45E0DAA-C8FE-4822-80F8-CBA109A8C63C}
+		{F40D7DD1-9F81-41E7-A739-D40F657CBE02} = {071CEF9F-415C-4B00-A110-392C03E5405D}
+	EndGlobalSection
+EndGlobal

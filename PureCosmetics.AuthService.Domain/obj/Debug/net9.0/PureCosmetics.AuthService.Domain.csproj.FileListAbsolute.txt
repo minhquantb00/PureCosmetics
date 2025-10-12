@@ -1,0 +1,15 @@
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\bin\Debug\net9.0\PureCosmetics.AuthService.Domain.deps.json
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\bin\Debug\net9.0\PureCosmetics.AuthService.Domain.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\bin\Debug\net9.0\PureCosmetics.AuthService.Domain.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\bin\Debug\net9.0\PureCosmetics.Commons.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\bin\Debug\net9.0\PureCosmetics.Commons.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.csproj.AssemblyReference.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.AssemblyInfoInputs.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.AssemblyInfo.cs
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.csproj.CoreCompileInputs.cache
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosm.CABF2A2B.Up2Date
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\refint\PureCosmetics.AuthService.Domain.dll
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\PureCosmetics.AuthService.Domain.pdb
+D:\DoAnCSharp\PureCosmetics\PureCosmetics\PureCosmetics.AuthService.Domain\obj\Debug\net9.0\ref\PureCosmetics.AuthService.Domain.dll
