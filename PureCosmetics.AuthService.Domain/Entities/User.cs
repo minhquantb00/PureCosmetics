@@ -21,7 +21,7 @@ namespace PureCosmetics.AuthService.Domain.Entities
         public DateTime DateOfBirth { get; private set; }
         public DateTime? LastLoginTime { get; private set; }
         public DateTime CreationTime { get;  set; }
-        public int CreatorUserId { get; set; }
+        public int? CreatorUserId { get; set; }
         public DateTime? LastModificationTime { get; set; }
         public int? LastModifierUserId { get; set; }
         public bool IsDeleted { get; set; }
@@ -30,19 +30,18 @@ namespace PureCosmetics.AuthService.Domain.Entities
         public bool IsActive { get; set; }
 
         public User() { }
-        public User(string email, string phoneNumber, string userName, string password, string firstName, string lastName, DateTime dateOfBirth, int creatorUserId)
+        public User(string email, string phoneNumber, string userName, string password, string firstName, string lastName, DateTime dateOfBirth, int? creatorUserId = null)
         {
             Email = email;
             PhoneNumber = phoneNumber;
             UserName = userName;
-            PasswordHash = EncryptionExtensions.Encryption(Id.ToString(), password, out string salt);
+            PasswordHash = EncryptionExtensions.Encryption(Guid.NewGuid().ToString(), password, out string salt);
             PasswordSalt = salt;
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
             LastLoginTime = null;
             CreationTime = DateTime.Now;
-            CreatorUserId = creatorUserId;
             IsDeleted = false;
             IsActive = true;
             LastModificationTime = null;

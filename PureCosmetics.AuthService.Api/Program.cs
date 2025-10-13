@@ -1,10 +1,14 @@
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
+using PureCosmetics.AuthService.Application.Validators;
+using PureCosmetics.AuthService.Infrastructure.DependencyInjections;
 using PureCosmetics.AuthService.Infrastructure.ORM;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddInfrastructure();
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

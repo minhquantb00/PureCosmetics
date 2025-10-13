@@ -9,6 +9,6 @@ namespace PureCosmetics.Commons.Base
     public interface IHasCreationTime
     {
          DateTime CreationTime { get;  set; }
-         int CreatorUserId { get; set; }
+         int? CreatorUserId { get; set; }
     }
 }
