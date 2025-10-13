@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Infrastructure.ORM
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext, IDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -54,6 +54,16 @@ namespace PureCosmetics.AuthService.Infrastructure.ORM
             
             base.OnModelCreating(modelBuilder);
 
+        }
+
+        public async Task<int> CommitChangesAsync()
+        {
+            return await base.SaveChangesAsync();
+        }
+
+        public DbSet<TEntity> SetEntity<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
         }
     }
 }
