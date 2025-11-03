@@ -10,6 +10,9 @@ namespace PureCosmetics.AuthService.Domain.RepositoryContracts
 {
     public interface IUserRepository
     {
+        Task AddRoleToUserAsync(User user, List<string> listRoles);
+        Task DeleteRolesOfUserAsync(User user, List<string> listRoles);
+        IEnumerable<string> GetRolesOfUserAsync(User user);
         Task<User?> GetByIdAsync(int id);
         User? GetById(int id);
         Task<User?> GetAsync(Expression<Func<User, bool>>? predicate = null);

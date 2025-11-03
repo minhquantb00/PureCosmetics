@@ -8,6 +8,7 @@ using PureCosmetics.AuthService.Domain.RepositoryContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,10 +50,17 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
 
             await _userRepository.CreateAsyn(user);
 
+            if(user != null)
+            {
+                await _userRepository.AddRoleToUserAsync(user, new List<string> { "ROLE_CUSTOMER" });
+            }
             
             return new ApiResponse<DataUserResponse>
             {
-
+                IsSuccess = true,
+                StatusCode = HttpStatusCode.OK,
+                TimeStamp = DateTime.Now,
+                Message = "Account created successfully!"
             };
         }
     }

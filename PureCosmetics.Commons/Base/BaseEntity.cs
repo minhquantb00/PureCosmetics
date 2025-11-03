@@ -10,7 +10,7 @@ namespace PureCosmetics.Commons.Base
     public abstract class BaseEntity<TEntity>
     {
         [Key]
-        public required TEntity Id { get; set; }
+        public TEntity Id { get; set; }
         public int NumericalOrder { get; set; }
     }
 }
