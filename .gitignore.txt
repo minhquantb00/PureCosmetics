@@ -1,0 +1,91 @@
+# Visual Studio user-specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]emp/
+Debug/
+Release/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# Visual Studio Code workspace
+.vscode/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NGen cache
+*.gen.cs
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# NuGet
+*.nupkg
+*.snupkg
+# The packages folder can be ignored if you have a restore command in build
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+# except build folder so msbuild targets aren't ignored
+
+# Azure build outputs
+csx/
+*.build.csdef
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# User secrets
+**/secrets.json
+
+# Entity Framework
+*.dbmdl
+
+# Logs and dumps
+*.log
+*.dmp
+
+# Publish outputs
+publish/
+app.publish/
+
+# Resharper cache
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# VS Code settings
+.vscode/
+
+# Backup & temp files
+~$*
+*.bak
+*.tmp
+*.temp
+
+# Rider + VS cache
+.idea/
+.vs/
+.vscode/
