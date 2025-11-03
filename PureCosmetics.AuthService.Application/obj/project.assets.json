@@ -115,26 +115,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages": {},
+    "C:\\Users\\ACER\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DoAnCSharp\\PureCosmetics\\PureCosmetics\\PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj",
+      "projectUniqueName": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj",
       "projectName": "PureCosmetics.AuthService.Application",
-      "projectPath": "D:\\DoAnCSharp\\PureCosmetics\\PureCosmetics\\PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\DoAnCSharp\\PureCosmetics\\PureCosmetics\\PureCosmetics.AuthService.Application\\obj\\",
+      "projectPath": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.1.config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -143,15 +140,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 23.1\\Components\\System\\Components\\Packages": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\DoAnCSharp\\PureCosmetics\\PureCosmetics\\PureCosmetics.AuthService.Domain\\PureCosmetics.AuthService.Domain.csproj": {
-              "projectPath": "D:\\DoAnCSharp\\PureCosmetics\\PureCosmetics\\PureCosmetics.AuthService.Domain\\PureCosmetics.AuthService.Domain.csproj"
+            "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\PureCosmetics.AuthService.Domain.csproj": {
+              "projectPath": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\PureCosmetics.AuthService.Domain.csproj"
             }
           }
         }
@@ -166,7 +163,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -187,7 +184,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

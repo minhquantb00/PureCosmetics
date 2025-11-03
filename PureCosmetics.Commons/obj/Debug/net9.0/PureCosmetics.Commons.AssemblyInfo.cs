@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PureCosmetics.Commons")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e114a916750d205b085e6390b614800efcb7435a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PureCosmetics.Commons")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PureCosmetics.Commons")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
