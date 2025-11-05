@@ -28,4 +28,10 @@ namespace PureCosmetics.AuthService.Application.Models.Responses.User
         public int? DeleterUserId { get; set; }
         public bool IsActive { get; set; }
     }
+
+    public class DataResponseLogin
+    {
+        public string AccessToken { get; set; } = string.Empty;
+        public string RefreshToken { get; set; } = string.Empty;
+    }
 }

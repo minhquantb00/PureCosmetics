@@ -48,7 +48,7 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
                     _context.UserRoles.Add(new UserRole(user.Id, roleItem.Id));
                 }
             }
-            await _context.SaveChangesAsync();
+             _context.SaveChanges();
         }
 
         public async Task DeleteRolesOfUserAsync(User user, List<string> listRoles)
@@ -137,12 +137,12 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
         public async Task CreateAsyn(User user)
         {
             _context.Users.Add(user);
-            await _dbContext.CommitChangesAsync();
+            await _context.SaveChangesAsync();
         }
         public async Task UpdateAsync(User user)
         {
             _context.Users.Update(user);
-            await _dbContext.CommitChangesAsync();
+            await _context.SaveChangesAsync();
         }
         public async Task<bool> DeleteAsync(int id)
         {
@@ -152,7 +152,7 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
                 data.IsDeleted = true;
                 data.DeletionTime = DateTime.Now;
                 _context.Users.Update(data);
-                await _dbContext.CommitChangesAsync();
+                await _context.SaveChangesAsync();
                 return true;
             }
             return false;
@@ -166,7 +166,7 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
                 data.IsDeleted = true;
                 data.DeletionTime = DateTime.Now;
                 _context.Users.Update(data);
-                await _dbContext.CommitChangesAsync();
+                await _context.SaveChangesAsync();
                 return true;
             }
             return false;
@@ -181,7 +181,7 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
                     entity.IsDeleted = true;
                     entity.DeletionTime = DateTime.Now;
                     _context.Users.Update(entity);
-                    await _dbContext.CommitChangesAsync();
+                    await _context.SaveChangesAsync();
                 }
             }
         }

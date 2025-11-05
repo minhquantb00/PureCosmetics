@@ -23,8 +23,4 @@
     <ProjectReference Include="..\PureCosmetics.AuthService.Domain\PureCosmetics.AuthService.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="RepositoryImplements\" />
-  </ItemGroup>
-
 </Project>

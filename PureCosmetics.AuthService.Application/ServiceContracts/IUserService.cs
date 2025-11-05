@@ -12,5 +12,6 @@ namespace PureCosmetics.AuthService.Application.ServiceContracts
     public interface IUserService
     {
         Task<ApiResponse<DataUserResponse>> CreateUser(UserCreateRequest request);
+        Task<ApiResponse<DataResponseLogin>> Login(UserLoginRequest request);
     }
 }

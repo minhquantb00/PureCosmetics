@@ -30,13 +30,13 @@ namespace PureCosmetics.AuthService.Domain.Entities
         public bool IsActive { get; set; }
 
         public User() { }
-        public User(string email, string phoneNumber, string userName, string password, string firstName, string lastName, DateTime dateOfBirth, int? creatorUserId = null)
+        public User(string email, string phoneNumber, string userName, string password, string firstName, string lastName, DateTime dateOfBirth, int numericalOrder , int? creatorUserId = null)
         {
             Email = email;
             PhoneNumber = phoneNumber;
             UserName = userName;
-            PasswordHash = EncryptionExtensions.Encryption(Guid.NewGuid().ToString(), password, out string salt);
-            PasswordSalt = salt;
+            PasswordSalt = BCrypt.Net.BCrypt.GenerateSalt(12);
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(password, PasswordSalt);
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
@@ -48,6 +48,7 @@ namespace PureCosmetics.AuthService.Domain.Entities
             LastModifierUserId = null;
             DeletionTime = null;
             DeleterUserId = null;
+            NumericalOrder = numericalOrder;
         }
     }
 }

@@ -31,8 +31,21 @@ namespace PureCosmetics.AuthService.Application.Validators
             RuleFor(x => x.DateOfBirth)
                 .LessThan(DateTime.Now).WithMessage("DateOfBirth must be in the past.");
             RuleFor(x => x.PhoneNumber)
+                .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("PhoneNumber is required.")
-                .Matches(@"^\+?[1-9]\d{1,14}$").WithMessage("Invalid phone number format.");
+                .Matches(@"^(?:\+84|0)(?:3[2-9]|5[689]|7[06-9]|8[1-5]|9\d)\d{7}$")
+                .WithMessage("Invalid phone number format.");
+        }
+    }
+
+    public class UserLoginValidate : AbstractValidator<UserLoginRequest>
+    {
+        public UserLoginValidate()
+        {
+            RuleFor(x => x.UserName)
+                .NotEmpty().WithMessage("UserName is required.");
+            RuleFor(x => x.Password)
+                .NotEmpty().WithMessage("Password is required.");
         }
     }
 }
