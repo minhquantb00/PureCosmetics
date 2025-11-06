@@ -22,5 +22,7 @@ namespace PureCosmetics.AuthService.Domain.RepositoryContracts
         Task<bool> DeleteAsync(int id);
         Task<bool> DeleteAsync(Expression<Func<User, bool>> prodecate);
         Task DeleteRangeAsync(IEnumerable<User> entities);
+        Task<IEnumerable<string>> GetUserRolesAsync(int userId);
+        Task<IEnumerable<string>> GetUserPermissionsAsync(int userId);
     }
 }

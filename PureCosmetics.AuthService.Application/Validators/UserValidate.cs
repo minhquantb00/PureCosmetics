@@ -48,4 +48,25 @@ namespace PureCosmetics.AuthService.Application.Validators
                 .NotEmpty().WithMessage("Password is required.");
         }
     }
+
+    public class UserUpdateValidate : AbstractValidator<UserUpdateRequest>
+    {
+        public UserUpdateValidate()
+        {
+            RuleFor(x => x.Id).NotEmpty().WithMessage("Id is required.");
+            RuleFor(x => x.UserName)
+                .MaximumLength(50).WithMessage("UserName must not exceed 50 characters.");
+            RuleFor(x => x.Email).EmailAddress().WithMessage("Invalid email format.");
+            RuleFor(x => x.FirstName)
+                .MaximumLength(50).WithMessage("FirstName must not exceed 50 characters.");
+            RuleFor(x => x.LastName)
+                .MaximumLength(50).WithMessage("LastName must not exceed 50 characters.");
+            RuleFor(x => x.DateOfBirth)
+                .LessThan(DateTime.Now).WithMessage("DateOfBirth must be in the past.");
+            RuleFor(x => x.PhoneNumber)
+                .Cascade(CascadeMode.Stop)
+                .Matches(@"^(?:\+84|0)(?:3[2-9]|5[689]|7[06-9]|8[1-5]|9\d)\d{7}$")
+                .WithMessage("Invalid phone number format.");
+        }
+    }
 }

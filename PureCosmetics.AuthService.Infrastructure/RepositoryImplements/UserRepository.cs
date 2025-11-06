@@ -102,6 +102,20 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
             }
             return roles.AsEnumerable();
         }
+        public async Task<IEnumerable<string>> GetUserRolesAsync(int userId)
+        => await (from ur in _context.UserRoles
+                  join r in _context.Roles on ur.RoleId equals r.Id
+                  where ur.UserId == userId
+                  select r.Name)
+            .Distinct().ToListAsync();
+
+        public async Task<IEnumerable<string>> GetUserPermissionsAsync(int userId)
+            => await (from ur in _context.UserRoles
+                      join rp in _context.RolePermissions on ur.RoleId equals rp.RoleId
+                      join p in _context.Permissions on rp.PermissionId equals p.Id
+                      where ur.UserId == userId
+                      select p.Code)
+                .Distinct().ToListAsync();
         #endregion
         #region Handle String
         private Task<bool> CompareStringAsync(string str1, string str2)

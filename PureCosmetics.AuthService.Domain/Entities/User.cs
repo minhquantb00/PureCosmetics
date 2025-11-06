@@ -50,5 +50,19 @@ namespace PureCosmetics.AuthService.Domain.Entities
             DeleterUserId = null;
             NumericalOrder = numericalOrder;
         }
+
+        public void Change(int id, string email, string phoneNumber, string userName, string firstName, string lastName, DateTime dateOfBirth)
+        {
+            Id = id;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            UserName = userName;
+            PhoneNumber = phoneNumber;
+            UserName = userName;
+            FirstName = firstName;
+            LastName = lastName;
+            DateOfBirth = dateOfBirth;
+            LastModificationTime = DateTime.Now;
+        }
     }
 }

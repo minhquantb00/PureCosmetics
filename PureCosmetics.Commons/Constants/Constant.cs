@@ -15,4 +15,12 @@ namespace PureCosmetics.Commons.Constants
         public const string DEFAULT_CONTROLLER_ROUTE_WITHOUT_ACTION = "api/[controller]";
         public const string DEFAULT_ACTION_ROUTE = "[action]";
     }
+
+    public class Roles
+    {
+        public const string ROLE_ADMIN = "ROLE_ADMIN";
+        public const string ROLE_STAFF = "ROLE_STAFF";
+        public const string ROLE_CUSTOMER = "ROLE_CUSTOMER";
+        public const string ROLE_AFFILIATE = "ROLE_AFFILIATE";
+    }
 }

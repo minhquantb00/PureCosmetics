@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PureCosmetics.AuthService.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16b6e7bd82789fe4eab53eb0a684a842c6d76dda")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb330ed28e68d53c82d69bcb5affe2bc524a0311")]
 [assembly: System.Reflection.AssemblyProductAttribute("PureCosmetics.AuthService.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PureCosmetics.AuthService.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
