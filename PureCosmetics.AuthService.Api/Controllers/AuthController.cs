@@ -65,6 +65,28 @@ namespace PureCosmetics.AuthService.Api.Controllers
             return Ok(result);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetUserById([FromBody] UserGetByIdRequest request)
+        {
+            var result = await _userService.GetUserById(request);
+            if (!result.IsSuccess)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers([FromBody] UserGetsRequest request)
+        {
+            var result = await _userService.GetAllUsers(request);
+            if (!result.IsSuccess)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
         [HttpPost]
         public IActionResult DebugJwt([FromBody] string token, [FromServices] IConfiguration cfg)
         {

@@ -49,7 +49,18 @@ builder.Services.AddAuthentication(options =>
             Encoding.UTF8.GetBytes((builder.Configuration["JWT:SecretKey"] ?? "").Trim())
         )
     };
+})
+.AddCookie("External")
+.AddFacebook(options =>
+{
+    options.AppId = builder.Configuration["Authentication:Facebook:AppId"]!;
+    options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"]!;
+    options.SignInScheme = "External"; // cookie tạm
+    options.SaveTokens = true;
+    options.Fields.Add("email");
+    options.Fields.Add("name");
 });
+builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

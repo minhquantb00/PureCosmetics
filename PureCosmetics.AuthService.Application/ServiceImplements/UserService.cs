@@ -13,6 +13,7 @@ using PureCosmetics.AuthService.Domain.Entities;
 using PureCosmetics.AuthService.Domain.RepositoryContracts;
 using PureCosmetics.Commons.Constants;
 using PureCosmetics.Commons.Encrypts;
+using PureCosmetics.Commons.Paginations;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -262,6 +263,34 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
         #endregion
+        #region Reads
+        public async Task<ApiResponse<PagedResult<DataUserResponse>>> GetAllUsers(UserGetsRequest request)
+        {
+            var query = await _userRepository.GetAllAsync(x => x.IsDeleted == false && x.IsActive == true);
+
+            if(!string.IsNullOrWhiteSpace(request.Keyword))
+            {
+                query = query.Where(x => x.UserName.Contains(request.Keyword) || x.Email.Contains(request.Keyword) || x.PhoneNumber.Contains(request.Keyword) || x.FirstName.Contains(request.Keyword) || x.LastName.Contains(request.Keyword));
+            }
+
+            var pagedResult = await PagedResult<DataUserResponse>.ToPagedResultAsync(
+                new Pagination{Page = request.PageIndex, ItemsPerPage = request.PageSize},
+                query.Select(UserMapping.EntityToDto).AsQueryable()
+            );
+
+            return pagedResult.Data != null
+                ? ApiResponse<PagedResult<DataUserResponse>>.Success(pagedResult, "Users retrieved successfully.")
+                : ApiResponse<PagedResult<DataUserResponse>>.Fail("Failed to retrieve users.", HttpStatusCode.InternalServerError);
+        }
+
+        public async Task<ApiResponse<DataUserResponse>> GetUserById(UserGetByIdRequest request)
+        {
+            var user = await _userRepository.GetByIdAsync(request.Id);
+            return user != null
+                ? ApiResponse<DataUserResponse>.Success(UserMapping.EntityToDto(user), "User retrieved successfully.")
+                : ApiResponse<DataUserResponse>.Fail("User not found.", HttpStatusCode.NotFound);
+        }
+        #endregion
         #region Private Methods
         private async Task<DataResponseLogin> GetJwtTokenAsync(User user)
         {
@@ -337,7 +366,6 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             rng.GetBytes(bytes);
             return Convert.ToBase64String(bytes);
         }
-
         #endregion
     }
 }
