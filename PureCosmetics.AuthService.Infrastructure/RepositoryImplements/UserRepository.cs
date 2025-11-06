@@ -92,12 +92,13 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
         {
             List<string> roles = new List<string>();
             var listRoles = _context.UserRoles.Where(x => x.UserId == user.Id).AsQueryable();
-            foreach (var item in listRoles.Distinct())
+            var roleIds = listRoles.Select(x => x.RoleId).Distinct().ToList();
+            var roleData = _context.Roles.Where(x => roleIds.Contains(x.Id)).ToList();
+            foreach (var item in roleData)
             {
-                var role = _context.Roles.SingleOrDefault(x => x.Id == item.RoleId);
-                if (role != null)
+                if (item != null)
                 {
-                    roles.Add(role.Code);
+                    roles.Add(item.Code);
                 }
             }
             return roles.AsEnumerable();
@@ -106,7 +107,7 @@ namespace PureCosmetics.AuthService.Infrastructure.RepositoryImplements
         => await (from ur in _context.UserRoles
                   join r in _context.Roles on ur.RoleId equals r.Id
                   where ur.UserId == userId
-                  select r.Name)
+                  select r.Code)
             .Distinct().ToListAsync();
 
         public async Task<IEnumerable<string>> GetUserPermissionsAsync(int userId)

@@ -19,5 +19,7 @@ namespace PureCosmetics.AuthService.Application.ServiceContracts
         Task<ApiResponse<DataResponseLogin>> Login(UserLoginRequest request);
         [OperationContract]
         Task<ApiResponse<DataUserResponse>> UpdateUser(UserUpdateRequest request);
+        [OperationContract]
+        Task<ApiResponse<DataUserResponse>> DeleteUser(UserDeleteRequest request);
     }
 }

@@ -11,6 +11,7 @@ using PureCosmetics.AuthService.Application.ServiceContracts;
 using PureCosmetics.AuthService.Application.Validators;
 using PureCosmetics.AuthService.Domain.Entities;
 using PureCosmetics.AuthService.Domain.RepositoryContracts;
+using PureCosmetics.Commons.Constants;
 using PureCosmetics.Commons.Encrypts;
 using System;
 using System.Collections.Generic;
@@ -152,6 +153,67 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        public async Task<ApiResponse<DataUserResponse>> DeleteUser(UserDeleteRequest request)
+        {
+            var currentUser = _httpContextAccessor.HttpContext!.User;
+            if (!currentUser.Identity!.IsAuthenticated)
+            {
+                return new ApiResponse<DataUserResponse>
+                {
+                    Data = null,
+                    Errors = new List<string> { "UnAuthenticated user" },
+                    IsSuccess = false,
+                    Message = "UnAuthenticated user",
+                    StatusCode = HttpStatusCode.Unauthorized,
+                    TimeStamp = DateTime.Now,
+                };
+            }
+
+            var user = await _userRepository.GetByIdAsync(request.Id);
+            if(user == null)
+            {
+                return new ApiResponse<DataUserResponse>
+                {
+                    Data = null,
+                    Errors = new List<string> { "User is null"},
+                    IsSuccess = false,
+                    Message = "User is null",
+                    StatusCode = HttpStatusCode.BadRequest,
+                    TimeStamp = DateTime.Now
+                };
+            }
+
+            var currentUserId = int.Parse(currentUser.FindFirst("Id")!.Value);
+            if(currentUserId != user.Id || !currentUser.IsInRole(Roles.ROLE_ADMIN))
+            {
+                return new ApiResponse<DataUserResponse>
+                {
+                    Data = null,
+                    Errors = new List<string> { "The user does not have permission to perform this function" },
+                    IsSuccess = false,
+                    Message = "The user does not have permission to perform this function",
+                    StatusCode = HttpStatusCode.Forbidden,
+                    TimeStamp = DateTime.Now
+                };
+            }
+
+            user.IsDeleted = true;
+            user.DeletionTime = DateTime.Now;
+            user.DeleterUserId = currentUserId;
+
+            await _userRepository.UpdateAsync(user);
+
+            return new ApiResponse<DataUserResponse>
+            {
+                Data = null,
+                Errors = [],
+                IsSuccess = true,
+                Message = "Account deleted successfully!",
+                StatusCode = HttpStatusCode.OK,
+                TimeStamp = DateTime.Now
+            };
+        }
+
         public async Task<ApiResponse<DataResponseLogin>> Login(UserLoginRequest request)
         {
             UserLoginValidate validator = new UserLoginValidate();
@@ -208,7 +270,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 throw new ArgumentNullException(nameof(user));
             }
 
-            var roles = await _userRepository.GetUserRolesAsync(user.Id);
+            var roles = _userRepository.GetRolesOfUserAsync(user);
             var permissions = await _userRepository.GetUserPermissionsAsync(user.Id);
 
             var claims = new List<Claim>
@@ -220,10 +282,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
 
             foreach (var role in roles)
-                claims.Add(new Claim(ClaimTypes.Role, role));
+            {
+                claims.Add(new Claim("role", role));
+            }
 
             foreach (var perm in permissions)
+            {
                 claims.Add(new Claim("permission", perm));
+            }
 
             var jwtToken = CreateJwt(claims);
 

@@ -30,4 +30,10 @@ namespace PureCosmetics.AuthService.Application.Models.Requests.User
         [ProtoMember(6)] public string LastName { get; set; } = string.Empty;
         [ProtoMember(7)] public DateTime DateOfBirth { get; set; }
     }
+
+    [ProtoContract]
+    public record UserDeleteRequest
+    {
+        [ProtoMember(1)] public required int Id { get; set; }
+    }
 }

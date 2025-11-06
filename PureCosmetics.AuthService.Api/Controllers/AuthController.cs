@@ -42,6 +42,18 @@ namespace PureCosmetics.AuthService.Api.Controllers
             return Ok(result);
         }
 
+        [HttpPut]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> DeleteUser([FromBody] UserDeleteRequest request)
+        {
+            var result = await _userService.DeleteUser(request);
+            if(!result.IsSuccess)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] UserLoginRequest request)
         {
