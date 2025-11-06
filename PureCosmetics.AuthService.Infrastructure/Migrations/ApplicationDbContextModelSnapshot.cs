@@ -146,7 +146,7 @@ namespace PureCosmetics.AuthService.Infrastructure.Migrations
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreatorUserId")
+                    b.Property<int?>("CreatorUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateOfBirth")

@@ -19,7 +19,6 @@ namespace PureCosmetics.AuthService.Domain.Entities
         {
             UserId = userId;
             Token = token;
-            ExpireTime = DateTime.Now.AddHours(8);
             ExpireTime = expireTime;
             RevokedTime = null;
         }

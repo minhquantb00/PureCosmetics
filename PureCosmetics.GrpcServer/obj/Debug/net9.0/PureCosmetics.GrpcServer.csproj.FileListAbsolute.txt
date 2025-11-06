@@ -1,0 +1,13 @@
+D:\Cosmetics\PureCosmetics.GrpcServer\bin\Debug\net9.0\PureCosmetics.GrpcServer.deps.json
+D:\Cosmetics\PureCosmetics.GrpcServer\bin\Debug\net9.0\PureCosmetics.GrpcServer.dll
+D:\Cosmetics\PureCosmetics.GrpcServer\bin\Debug\net9.0\PureCosmetics.GrpcServer.pdb
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.csproj.AssemblyReference.cache
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.AssemblyInfoInputs.cache
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.AssemblyInfo.cs
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.csproj.CoreCompileInputs.cache
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.sourcelink.json
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.dll
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\refint\PureCosmetics.GrpcServer.dll
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\PureCosmetics.GrpcServer.pdb
+D:\Cosmetics\PureCosmetics.GrpcServer\obj\Debug\net9.0\ref\PureCosmetics.GrpcServer.dll

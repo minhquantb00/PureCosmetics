@@ -20,12 +20,18 @@ namespace PureCosmetics.AuthService.Application.Models.Responses.User
         public DateTime DateOfBirth { get; set; }
         public DateTime? LastLoginTime { get; set; }
         public DateTime CreationTime { get; set; }
-        public int CreatorUserId { get; set; }
+        public int? CreatorUserId { get; set; }
         public DateTime? LastModificationTime { get; set; }
         public int? LastModifierUserId { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime? DeletionTime { get; set; }
         public int? DeleterUserId { get; set; }
         public bool IsActive { get; set; }
+    }
+
+    public class DataResponseLogin
+    {
+        public string AccessToken { get; set; } = string.Empty;
+        public string RefreshToken { get; set; } = string.Empty;
     }
 }
