@@ -240,13 +240,11 @@ D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Composition.R
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Composition.TypedParts.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Drawing.Common.dll
-D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Formats.Asn1.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Memory.Data.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Runtime.Caching.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Security.Permissions.dll
-D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Text.Json.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\System.Windows.Extensions.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -390,3 +388,4 @@ D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\zh-Hans\System.Servi
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\zh-Hant\System.ServiceModel.Primitives.resources.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\PureCosmetics.GrpcServer.dll
 D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\PureCosmetics.GrpcServer.pdb
+D:\Cosmetics\PureCosmetics.AuthService.Api\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.Facebook.dll

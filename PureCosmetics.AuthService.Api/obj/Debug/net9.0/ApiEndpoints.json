@@ -33,6 +33,54 @@
   },
   {
     "ContainingType": "PureCosmetics.AuthService.Api.Controllers.AuthController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Auth/DeleteUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PureCosmetics.AuthService.Application.Models.Requests.User.UserDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PureCosmetics.AuthService.Api.Controllers.AuthController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Auth/GetAllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PureCosmetics.AuthService.Application.Models.Requests.User.UserGetsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PureCosmetics.AuthService.Api.Controllers.AuthController",
+    "Method": "GetUserById",
+    "RelativePath": "api/Auth/GetUserById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PureCosmetics.AuthService.Application.Models.Requests.User.UserGetByIdRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PureCosmetics.AuthService.Api.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
