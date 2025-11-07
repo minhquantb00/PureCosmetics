@@ -66,7 +66,7 @@ namespace PureCosmetics.AuthService.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUserById([FromBody] UserGetByIdRequest request)
+        public async Task<IActionResult> GetUserById([FromQuery] UserGetByIdRequest request)
         {
             var result = await _userService.GetUserById(request);
             if (!result.IsSuccess)
@@ -77,7 +77,7 @@ namespace PureCosmetics.AuthService.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllUsers([FromBody] UserGetsRequest request)
+        public async Task<IActionResult> GetAllUsers([FromQuery] UserGetsRequest request)
         {
             var result = await _userService.GetAllUsers(request);
             if (!result.IsSuccess)
