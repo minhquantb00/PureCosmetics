@@ -69,8 +69,8 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             }
             var listUser = await _userRepository.GetAllAsync();
 
-            var lastNumericalOrder = listUser.Select(x => x.NumericalOrder).Max();
-            var user = new User(request.Email, request.PhoneNumber, request.UserName, request.Password, request.FirstName, request.LastName, request.DateOfBirth, lastNumericalOrder++,  null);
+            var lastNumericalOrder = listUser.Select(x => x.NumericalOrder).OrderBy(x => x).LastOrDefault();
+            var user = new User(request.Email, request.PhoneNumber, request.UserName, request.Password, request.FirstName, request.LastName, request.DateOfBirth, lastNumericalOrder++, "https://hasaki.vn/images/graphics/account-full.svg",  null);
 
             await _userRepository.CreateAsyn(user);
 

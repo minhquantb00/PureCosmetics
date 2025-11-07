@@ -30,7 +30,8 @@ namespace PureCosmetics.AuthService.Application.Mappers
                 LastModificationTime = user.LastModificationTime,
                 LastModifierUserId = user.LastModifierUserId,
                 LastName = user.LastName,
-                PhoneNumber = user.PhoneNumber
+                PhoneNumber = user.PhoneNumber,
+                AvatarUrl = user.AvatarUrl
             };
         }
     }

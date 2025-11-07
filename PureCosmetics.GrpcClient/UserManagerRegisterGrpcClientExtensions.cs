@@ -12,7 +12,7 @@ namespace PureCosmetics.GrpcClient
     {
         public static IServiceCollection UserManagerRegisterGrpcClient(this IServiceCollection services)
         {
-            services.RegisterGrpcClientLoadBalancing<IUserService>();
+            //services.RegisterGrpcClientLoadBalancing<IUserService>();
             return services;
         }
     }

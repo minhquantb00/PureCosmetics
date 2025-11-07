@@ -19,6 +19,7 @@ namespace PureCosmetics.AuthService.Infrastructure.ORM
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,7 +48,11 @@ namespace PureCosmetics.AuthService.Infrastructure.ORM
                 .WithMany()
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            modelBuilder.Entity<Address>()
+                .HasOne(x => x.User)
+                .WithMany()
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.UserName).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();

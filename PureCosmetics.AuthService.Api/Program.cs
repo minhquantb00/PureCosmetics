@@ -116,7 +116,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 app.MapGrpcService<UserService>();
-
+app.MapGrpcService<AddressService>();
 app.MapControllers();
 
 app.Run();

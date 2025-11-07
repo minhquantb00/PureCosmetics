@@ -1,0 +1,94 @@
+﻿using Microsoft.AspNetCore.Http;
+using PureCosmetics.AuthService.Application.Mappers;
+using PureCosmetics.AuthService.Application.Models;
+using PureCosmetics.AuthService.Application.Models.Requests.Address;
+using PureCosmetics.AuthService.Application.Models.Responses.Address;
+using PureCosmetics.AuthService.Application.ServiceContracts;
+using PureCosmetics.AuthService.Domain.Entities;
+using PureCosmetics.AuthService.Domain.RepositoryContracts;
+using PureCosmetics.Commons.Paginations;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PureCosmetics.AuthService.Application.ServiceImplements
+{
+    public class AddressService : IAddressService
+    {
+        #region Fields and Constructors
+        private readonly IAddressRepository _addressRepository;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public AddressService(IAddressRepository addressRepository, IHttpContextAccessor httpContextAccessor)
+        {
+            _addressRepository = addressRepository;
+            _httpContextAccessor = httpContextAccessor;
+        }
+        #endregion
+        #region Writes
+        public async Task<ApiResponse<DataAddressResponse>> CreateAddress(AddressCreateRequest request)
+        {
+            var currentUser = _httpContextAccessor.HttpContext?.User;
+            if(!currentUser!.Identity!.IsAuthenticated)
+            {
+                return ApiResponse<DataAddressResponse>.Fail("User is not authenticated", System.Net.HttpStatusCode.Unauthorized);
+            }
+
+            int currentUserId = int.Parse(currentUser.FindFirst("Id")!.Value);
+            var addressEntity = new Address(request.AddressUser, currentUserId, request.CustomerName, request.PhoneNumber, currentUserId);
+            
+            await _addressRepository.CreateAsyn(addressEntity);
+
+            var response = AddressMapping.EntityToDto(addressEntity);
+
+            return ApiResponse<DataAddressResponse>.Created(response, "Address created successfully");
+        }
+
+        public async Task<ApiResponse<DataAddressResponse>> UpdateAddress(AddressUpdateRequest request)
+        {
+            var entity =  await _addressRepository.GetByIdAsync(request.Id);
+            if(entity == null)
+            {
+                return ApiResponse<DataAddressResponse>.Fail("Address not found", System.Net.HttpStatusCode.NotFound);
+            }
+            int currentUserId = int.Parse(_httpContextAccessor.HttpContext?.User.FindFirst("Id")!.Value!);
+            entity.Change(request.AddressUser, request.CustomerName, request.PhoneNumber, currentUserId);
+
+            await _addressRepository.UpdateAsync(entity);
+
+            var response = AddressMapping.EntityToDto(entity);
+            return ApiResponse<DataAddressResponse>.Success(response, "Address updated successfully");
+        }
+
+        public async Task<ApiResponse<DataAddressResponse>> DeleteAddress(AddressDeleteRequest request)
+        {
+            var entity = await _addressRepository.GetByIdAsync(request.Id);
+            if (entity == null)
+            {
+                return ApiResponse<DataAddressResponse>.Fail("Address not found", System.Net.HttpStatusCode.NotFound);
+            }
+
+            await _addressRepository.DeleteAsync(entity.Id);
+            return ApiResponse<DataAddressResponse>.Success(null!, "Address deleted successfully");
+        }
+        #endregion
+        #region Reads
+        public Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddresses(AddressGetsRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ApiResponse<List<DataAddressResponse>>> GetAddressesById(AddressGetByIdRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddressesByUserId(AddressGetByUserIdRequest request)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+    }
+}

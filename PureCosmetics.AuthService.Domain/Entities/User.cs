@@ -10,6 +10,7 @@ namespace PureCosmetics.AuthService.Domain.Entities
 {
     public class User : BaseEntity<int>, IHasCreationTime, IHasModificationTime, IDeletable, IActivatable
     {
+        public string? AvatarUrl { get; private set; } = string.Empty;
         public string Email { get; private set; } = string.Empty;
         public string PhoneNumber { get; private set; } = string.Empty;
         public string UserName { get; private set; } = string.Empty;
@@ -30,7 +31,7 @@ namespace PureCosmetics.AuthService.Domain.Entities
         public bool IsActive { get; set; }
 
         public User() { }
-        public User(string email, string phoneNumber, string userName, string password, string firstName, string lastName, DateTime dateOfBirth, int numericalOrder , int? creatorUserId = null)
+        public User(string email, string phoneNumber, string userName, string password, string firstName, string lastName, DateTime dateOfBirth, int numericalOrder, string avatarUrl, int? creatorUserId = null)
         {
             Email = email;
             PhoneNumber = phoneNumber;
@@ -49,6 +50,7 @@ namespace PureCosmetics.AuthService.Domain.Entities
             DeletionTime = null;
             DeleterUserId = null;
             NumericalOrder = numericalOrder;
+            AvatarUrl = avatarUrl;
         }
 
         public void Change(int id, string email, string phoneNumber, string userName, string firstName, string lastName, DateTime dateOfBirth)
@@ -63,6 +65,11 @@ namespace PureCosmetics.AuthService.Domain.Entities
             LastName = lastName;
             DateOfBirth = dateOfBirth;
             LastModificationTime = DateTime.Now;
+        }
+
+        public void ChangeAvatar(string avatarUrl)
+        {
+            AvatarUrl = avatarUrl;
         }
     }
 }
