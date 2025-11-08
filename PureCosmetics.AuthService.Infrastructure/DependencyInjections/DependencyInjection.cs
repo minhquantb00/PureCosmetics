@@ -17,6 +17,7 @@ namespace PureCosmetics.AuthService.Infrastructure.DependencyInjections
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IDbContext, ApplicationDbContext>();
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
             return services;
         }
     }
