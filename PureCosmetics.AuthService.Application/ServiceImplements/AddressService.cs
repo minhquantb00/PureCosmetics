@@ -74,19 +74,42 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
         }
         #endregion
         #region Reads
-        public Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddresses(AddressGetsRequest request)
+        public async Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddresses(AddressGetsRequest request)
         {
-            throw new NotImplementedException();
+            var query = await _addressRepository.GetAllAsync();
+            if (!string.IsNullOrEmpty(request.Keyword))
+            {
+                query = query.Where(a => a.AddressUser.Contains(request.Keyword) || 
+                                         (a.CustomerName != null && a.CustomerName.Contains(request.Keyword)) ||
+                                         (a.PhoneNumber != null && a.PhoneNumber.Contains(request.Keyword)));
+            }
+            var pagination = new Pagination { Page =  request.PageIndex, ItemsPerPage = request.PageSize };
+            var pagedResult = await PagedResult<DataAddressResponse>.ToPagedResultAsync(pagination, query.Select(x => AddressMapping.EntityToDto(x)));
+
+            return ApiResponse<PagedResult<DataAddressResponse>>.Success(pagedResult, "Addresses retrieved successfully");
         }
 
-        public Task<ApiResponse<List<DataAddressResponse>>> GetAddressesById(AddressGetByIdRequest request)
+        public async Task<ApiResponse<DataAddressResponse>> GetAddressesById(AddressGetByIdRequest request)
         {
-            throw new NotImplementedException();
+            var entity = await _addressRepository.GetByIdAsync(request.Id);
+            if (entity == null)
+            {
+                return ApiResponse<DataAddressResponse>.Fail("Address not found", System.Net.HttpStatusCode.NotFound);
+            }
+            var response = AddressMapping.EntityToDto(entity);
+            return ApiResponse<DataAddressResponse>.Success(response, "Address retrieved successfully");
         }
 
-        public Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddressesByUserId(AddressGetByUserIdRequest request)
+        public async Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddressesByUserId(AddressGetByUserIdRequest request)
         {
-            throw new NotImplementedException();
+            var query = await _addressRepository.GetAllAsync(x => x.UserId == request.UserId);
+            if(query == null)
+            {
+                return ApiResponse<PagedResult<DataAddressResponse>>.Fail("No addresses found for the specified user", System.Net.HttpStatusCode.NotFound);
+            }
+            var pagination = new Pagination { Page = request.PageIndex, ItemsPerPage = request.PageSize };
+            var pagedResult = await PagedResult<DataAddressResponse>.ToPagedResultAsync(pagination, query.Select(x => AddressMapping.EntityToDto(x)));
+            return ApiResponse<PagedResult<DataAddressResponse>>.Success(pagedResult, "Addresses retrieved successfully");
         }
         #endregion
 

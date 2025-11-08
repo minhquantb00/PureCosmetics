@@ -25,5 +25,8 @@ namespace PureCosmetics.AuthService.Application.Models.Requests.Address
     public record AddressGetByUserIdRequest
     {
         [ProtoMember(1)] public required int UserId { get; set; }
+
+        [ProtoMember(2)] public int PageSize { get; set; } = 10;
+        [ProtoMember(3)] public int PageIndex { get; set; } = 1;
     }
 }

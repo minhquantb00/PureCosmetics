@@ -21,7 +21,7 @@ namespace PureCosmetics.AuthService.Application.ServiceContracts
         [OperationContract]
         Task<ApiResponse<DataAddressResponse>> DeleteAddress(AddressDeleteRequest request);
         [OperationContract]
-        Task<ApiResponse<List<DataAddressResponse>>> GetAddressesById(AddressGetByIdRequest request);
+        Task<ApiResponse<DataAddressResponse>> GetAddressesById(AddressGetByIdRequest request);
         [OperationContract]
         Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddresses(AddressGetsRequest request);
         [OperationContract]
