@@ -12,5 +12,7 @@ namespace PureCosmetics.EmailService.Domain.RepositoryContracts
         Task CreateAsync(EmailMessage emailMessage);
         Task UpdateAsync(EmailMessage emailMessage);
         Task<bool> DeleteAsync(int id);
+        Task<bool> ExistsByDedupAsync(string dedup, CancellationToken ct);
+        Task<List<EmailMessage>> TakeQueuedAsync(int take, DateTime utcNow, CancellationToken ct);
     }
 }

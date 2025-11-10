@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PureCosmetics.GrpcClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d66ed1831a7237ccd568c1882cd5c69142cf1657")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f55337aaa86773d4115476ee379e4829b653aedc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PureCosmetics.GrpcClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PureCosmetics.GrpcClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

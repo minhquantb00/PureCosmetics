@@ -36,6 +36,10 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             return false;
         }
 
+        public Task<bool> IsSuppressedAsync(string email, CancellationToken ct)
+        => _context.Subpressions.AnyAsync(s => s.EmailAddress == email &&
+            (s.ExpiresAt == null || s.ExpiresAt > DateTime.UtcNow), ct);
+
         public async Task UpdateAsync(Suppression suppression)
         {
             _context.Subpressions.Update(suppression);
