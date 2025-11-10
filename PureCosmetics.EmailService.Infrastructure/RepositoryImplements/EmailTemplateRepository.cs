@@ -36,6 +36,9 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             return false;
         }
 
+        public Task<EmailTemplate?> FindActiveAsync(string code, string locale, CancellationToken ct)
+        => _context.EmailTemplates.FirstOrDefaultAsync(t => t.Code == code && t.Locale == locale && t.IsActive, ct);
+
         public async Task UpdateAsync(EmailTemplate emailTemplate)
         {
             _context.EmailTemplates.Update(emailTemplate);

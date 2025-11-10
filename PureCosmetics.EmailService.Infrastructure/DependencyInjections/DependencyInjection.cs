@@ -1,5 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PureCosmetics.EmailService.Application.Ports.EventBus;
+using PureCosmetics.EmailService.Application.Ports.Providers;
 using PureCosmetics.EmailService.Domain.RepositoryContracts;
+using PureCosmetics.EmailService.Infrastructure.Messaging;
+using PureCosmetics.EmailService.Infrastructure.Providers;
 using PureCosmetics.EmailService.Infrastructure.RepositoryImplements;
 using System;
 using System.Collections.Generic;
@@ -21,6 +25,8 @@ namespace PureCosmetics.EmailService.Infrastructure.DependencyInjections
             services.AddScoped<ISuppressionRepository, SuppressionRepository>();
             services.AddScoped<IInboxMessageRepository, InboxMessageRepository>();
             services.AddScoped<IEmailAttachmentRepository, EmailAttachmentRepository>();
+            services.AddScoped<IEmailProvider, SmtpEmailProvider>();
+            services.AddScoped<IEventBus, MassTransitEventBus>();
             return services;
         }
     }

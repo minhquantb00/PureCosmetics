@@ -12,5 +12,6 @@ namespace PureCosmetics.EmailService.Domain.RepositoryContracts
         Task CreateAsync(Suppression suppression);
         Task UpdateAsync(Suppression suppression);
         Task<bool> DeleteAsync(int id);
+        Task<bool> IsSuppressedAsync(string email, CancellationToken ct);
     }
 }

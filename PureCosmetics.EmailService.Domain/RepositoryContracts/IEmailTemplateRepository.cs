@@ -12,5 +12,6 @@ namespace PureCosmetics.EmailService.Domain.RepositoryContracts
         Task CreateAsync(EmailTemplate emailTemplate);
         Task UpdateAsync(EmailTemplate emailTemplate);
         Task<bool> DeleteAsync(int id);
+        Task<EmailTemplate?> FindActiveAsync(string code, string locale, CancellationToken ct);
     }
 }
