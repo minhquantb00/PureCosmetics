@@ -13,6 +13,8 @@ using PureCosmetics.AuthService.Domain.Entities;
 using PureCosmetics.AuthService.Domain.RepositoryContracts;
 using PureCosmetics.Commons.Constants;
 using PureCosmetics.Commons.Encrypts;
+using PureCosmetics.Commons.HttpContext;
+using PureCosmetics.Commons.Paginations;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -68,8 +70,8 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             }
             var listUser = await _userRepository.GetAllAsync();
 
-            var lastNumericalOrder = listUser.Select(x => x.NumericalOrder).Max();
-            var user = new User(request.Email, request.PhoneNumber, request.UserName, request.Password, request.FirstName, request.LastName, request.DateOfBirth, lastNumericalOrder++,  null);
+            var lastNumericalOrder = listUser.Select(x => x.NumericalOrder).OrderBy(x => x).LastOrDefault();
+            var user = new User(request.Email, request.PhoneNumber, request.UserName, request.Password, request.FirstName, request.LastName, request.DateOfBirth, lastNumericalOrder++, "https://hasaki.vn/images/graphics/account-full.svg",  null);
 
             await _userRepository.CreateAsyn(user);
 
@@ -102,8 +104,8 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                     Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
                 };
             }
-            ClaimsPrincipal currentUser = _httpContextAccessor.HttpContext!.User;
-            if (!currentUser.Identity!.IsAuthenticated)
+            bool isAuthenticated = HttpContextHelper.IsUserAuthenticated(_httpContextAccessor);
+            if (!isAuthenticated)
             {
                 return new ApiResponse<DataUserResponse>
                 {
@@ -126,7 +128,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                     Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
                 };
             }
-            int currentUserId = int.Parse(currentUser.FindFirst("Id")!.Value);
+            int currentUserId = HttpContextHelper.CurrentUserId(_httpContextAccessor);
             if (user.Id != currentUserId)
             {
                 return new ApiResponse<DataUserResponse>
@@ -262,6 +264,34 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
         #endregion
+        #region Reads
+        public async Task<ApiResponse<PagedResult<DataUserResponse>>> GetAllUsers(UserGetsRequest request)
+        {
+            var query = await _userRepository.GetAllAsync(x => x.IsDeleted == false && x.IsActive == true);
+
+            if(!string.IsNullOrWhiteSpace(request.Keyword))
+            {
+                query = query.Where(x => x.UserName.Contains(request.Keyword) || x.Email.Contains(request.Keyword) || x.PhoneNumber.Contains(request.Keyword) || x.FirstName.Contains(request.Keyword) || x.LastName.Contains(request.Keyword));
+            }
+
+            var pagedResult = await PagedResult<DataUserResponse>.ToPagedResultAsync(
+                new Pagination{Page = request.PageIndex, ItemsPerPage = request.PageSize},
+                query.Select(UserMapping.EntityToDto).AsQueryable()
+            );
+
+            return pagedResult.Data != null
+                ? ApiResponse<PagedResult<DataUserResponse>>.Success(pagedResult, "Users retrieved successfully.")
+                : ApiResponse<PagedResult<DataUserResponse>>.Fail("Failed to retrieve users.", HttpStatusCode.InternalServerError);
+        }
+
+        public async Task<ApiResponse<DataUserResponse>> GetUserById(UserGetByIdRequest request)
+        {
+            var user = await _userRepository.GetByIdAsync(request.Id);
+            return user != null
+                ? ApiResponse<DataUserResponse>.Success(UserMapping.EntityToDto(user), "User retrieved successfully.")
+                : ApiResponse<DataUserResponse>.Fail("User not found.", HttpStatusCode.NotFound);
+        }
+        #endregion
         #region Private Methods
         private async Task<DataResponseLogin> GetJwtTokenAsync(User user)
         {
@@ -337,7 +367,6 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             rng.GetBytes(bytes);
             return Convert.ToBase64String(bytes);
         }
-
         #endregion
     }
 }

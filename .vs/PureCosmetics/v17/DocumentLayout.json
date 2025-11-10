@@ -3,20 +3,48 @@
   "WorkspaceRootPath": "D:\\Cosmetics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\serviceimplements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\serviceimplements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\models\\requests\\user\\usergetbyidrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\models\\requests\\user\\usergetbyidrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|solutionrelative:purecosmetics.authservice.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|solutionrelative:purecosmetics.authservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\serviceimplements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\serviceimplements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F40D7DD1-9F81-41E7-A739-D40F657CBE02}|PureCosmetics.Commons\\PureCosmetics.Commons.csproj|d:\\cosmetics\\purecosmetics.commons\\paginations\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F40D7DD1-9F81-41E7-A739-D40F657CBE02}|PureCosmetics.Commons\\PureCosmetics.Commons.csproj|solutionrelative:purecosmetics.commons\\paginations\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F40D7DD1-9F81-41E7-A739-D40F657CBE02}|PureCosmetics.Commons\\PureCosmetics.Commons.csproj|d:\\cosmetics\\purecosmetics.commons\\paginations\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F40D7DD1-9F81-41E7-A739-D40F657CBE02}|PureCosmetics.Commons\\PureCosmetics.Commons.csproj|solutionrelative:purecosmetics.commons\\paginations\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\validators\\uservalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\validators\\uservalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\servicecontracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\servicecontracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3EB1558F-265F-4C83-8273-EFAD4C39CC18}|PureCosmetics.AuthService.Domain\\PureCosmetics.AuthService.Domain.csproj|d:\\cosmetics\\purecosmetics.authservice.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3EB1558F-265F-4C83-8273-EFAD4C39CC18}|PureCosmetics.AuthService.Domain\\PureCosmetics.AuthService.Domain.csproj|solutionrelative:purecosmetics.authservice.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|solutionrelative:purecosmetics.authservice.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|solutionrelative:purecosmetics.authservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\models\\requests\\user\\usercreaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\models\\requests\\user\\usercreaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{80A2CE6F-269B-400E-8B2F-CE8476E1E900}|PureCosmetics.AuthService.Infrastructure\\PureCosmetics.AuthService.Infrastructure.csproj|d:\\cosmetics\\purecosmetics.authservice.infrastructure\\repositoryimplements\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,18 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\models\\responses\\user\\datauserresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\models\\responses\\user\\datauserresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\validators\\uservalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\validators\\uservalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\servicecontracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\servicecontracts\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\models\\requests\\user\\usercreaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|solutionrelative:purecosmetics.authservice.application\\models\\requests\\user\\usercreaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\purecosmetics.authservice.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -85,10 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|solutionrelative:purecosmetics.authservice.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|d:\\cosmetics\\purecosmetics.authservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{83525894-A2EE-4BD5-9F2F-78D866126869}|PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj|solutionrelative:purecosmetics.authservice.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E45FD70-097B-4C82-BF2E-838624D33A6F}|PureCosmetics.AuthService.Application\\PureCosmetics.AuthService.Application.csproj|d:\\cosmetics\\purecosmetics.authservice.application\\dependencyinjections\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -182,7 +194,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 34,
+          "SelectedChildIndex": 31,
           "Children": [
             {
               "$type": "Bookmark",
@@ -298,28 +310,50 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HasPermissionsAttribute.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
-              "RelativeToolTip": "PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Paginations\\PagedResult.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.Commons\\Paginations\\PagedResult.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.Commons\\Paginations\\PagedResult.cs",
+              "RelativeToolTip": "PureCosmetics.Commons\\Paginations\\PagedResult.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:49:23.11Z",
+              "WhenOpened": "2025-11-06T15:43:27.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "Pagination.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Paginations\\Pagination.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.Commons\\Paginations\\Pagination.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.Commons\\Paginations\\Pagination.cs",
+              "RelativeToolTip": "PureCosmetics.Commons\\Paginations\\Pagination.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T15:43:06.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserGetByIdRequest.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserGetByIdRequest.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserGetByIdRequest.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserGetByIdRequest.cs",
+              "RelativeToolTip": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserGetByIdRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBQAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T15:34:21.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "UserMapping.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Mappers\\UserMapping.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Mappers\\UserMapping.cs",
@@ -332,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "ServiceBinderWithServiceResolutionFromServiceCollection.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcServer\\ServiceBinderWithServiceResolutionFromServiceCollection.cs",
               "RelativeDocumentMoniker": "PureCosmetics.GrpcServer\\ServiceBinderWithServiceResolutionFromServiceCollection.cs",
@@ -340,49 +374,51 @@
               "RelativeToolTip": "PureCosmetics.GrpcServer\\ServiceBinderWithServiceResolutionFromServiceCollection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T01:53:40.843Z"
+              "WhenOpened": "2025-11-06T01:53:40.843Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\Program.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\Program.cs",
               "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\Program.cs",
               "RelativeToolTip": "PureCosmetics.AuthService.Api\\Program.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAkwEQAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwDUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T03:07:47.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\ServiceImplements\\UserService.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\ServiceImplements\\UserService.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\ServiceImplements\\UserService.cs*",
-              "RelativeToolTip": "PureCosmetics.AuthService.Application\\ServiceImplements\\UserService.cs*",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAywIQAAAAgAAAAAAAAAA==",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\ServiceImplements\\UserService.cs",
+              "RelativeToolTip": "PureCosmetics.AuthService.Application\\ServiceImplements\\UserService.cs",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAUwB0BAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-03T12:17:01.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\appsettings.json",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\appsettings.json",
               "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\appsettings.json",
               "RelativeToolTip": "PureCosmetics.AuthService.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-12T03:26:15.756Z"
+              "WhenOpened": "2025-10-12T03:26:15.756Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\appsettings.Development.json",
@@ -390,151 +426,51 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Api\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-03T12:40:32.606Z"
+              "WhenOpened": "2025-11-03T12:40:32.606Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\UserRepository.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\UserRepository.cs",
               "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\UserRepository.cs",
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\UserRepository.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAUwG8AAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAUwG8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-03T12:16:52.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\Entities\\User.cs",
               "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\User.cs",
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA/wC8AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwC8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T01:08:01.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserCreateRequest.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
-              "RelativeToolTip": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:44:32.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\ServiceContracts\\IUserService.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\ServiceContracts\\IUserService.cs",
               "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\ServiceContracts\\IUserService.cs",
               "RelativeToolTip": "PureCosmetics.AuthService.Application\\ServiceContracts\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-04T15:06:48.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T14:30:52.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Constant.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Constants\\Constant.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.Commons\\Constants\\Constant.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.Commons\\Constants\\Constant.cs",
-              "RelativeToolTip": "PureCosmetics.Commons\\Constants\\Constant.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T14:47:17.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
-              "RelativeToolTip": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T14:09:36.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ServicesExtensions.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcServer\\ServicesExtensions.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.GrpcServer\\ServicesExtensions.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.GrpcServer\\ServicesExtensions.cs",
-              "RelativeToolTip": "PureCosmetics.GrpcServer\\ServicesExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T01:56:39.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RegisterGrpcClientLoadBalancingExtensions.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
-              "RelativeToolTip": "PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T01:58:39.138Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DataUserResponse.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
-              "RelativeToolTip": "PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T14:49:40.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LoggerInterceptor.cs",
-              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
-              "RelativeDocumentMoniker": "PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
-              "ToolTip": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
-              "RelativeToolTip": "PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T02:01:31.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "UserValidate.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Validators\\UserValidate.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Validators\\UserValidate.cs",
@@ -547,7 +483,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "PureCosmetics.AuthService.Api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAuwE8AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T14:30:52.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HasPermissionsAttribute.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
+              "RelativeToolTip": "PureCosmetics.Attributes\\HasPermissionsAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T10:49:23.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserCreateRequest.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
+              "RelativeToolTip": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserCreateRequest.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIA/wCQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T01:44:32.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
+              "RelativeToolTip": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T14:09:36.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Constant.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Constants\\Constant.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.Commons\\Constants\\Constant.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.Commons\\Constants\\Constant.cs",
+              "RelativeToolTip": "PureCosmetics.Commons\\Constants\\Constant.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T14:47:17.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServicesExtensions.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcServer\\ServicesExtensions.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.GrpcServer\\ServicesExtensions.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.GrpcServer\\ServicesExtensions.cs",
+              "RelativeToolTip": "PureCosmetics.GrpcServer\\ServicesExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T01:56:39.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RegisterGrpcClientLoadBalancingExtensions.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
+              "RelativeToolTip": "PureCosmetics.GrpcClient\\RegisterGrpcClientLoadBalancingExtensions.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T01:58:39.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DataUserResponse.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
+              "RelativeToolTip": "PureCosmetics.AuthService.Application\\Models\\Responses\\User\\DataUserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T14:49:40.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LoggerInterceptor.cs",
+              "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
+              "RelativeDocumentMoniker": "PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
+              "ToolTip": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
+              "RelativeToolTip": "PureCosmetics.GrpcClient\\LoggerInterceptor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T02:01:31.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "UserManagerRegisterGrpcClientExtensions.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.GrpcClient\\UserManagerRegisterGrpcClientExtensions.cs",
               "RelativeDocumentMoniker": "PureCosmetics.GrpcClient\\UserManagerRegisterGrpcClientExtensions.cs",
@@ -555,11 +608,12 @@
               "RelativeToolTip": "PureCosmetics.GrpcClient\\UserManagerRegisterGrpcClientExtensions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T02:08:07.442Z"
+              "WhenOpened": "2025-11-06T02:08:07.442Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "PureCosmetics.AuthService.Api.csproj",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj",
@@ -567,11 +621,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-06T02:22:07.522Z"
+              "WhenOpened": "2025-11-06T02:22:07.522Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\ORM\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\ORM\\ApplicationDbContext.cs",
@@ -579,11 +634,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\ORM\\ApplicationDbContext.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAowCIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T03:01:38.631Z"
+              "WhenOpened": "2025-10-12T03:01:38.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\DependencyInjections\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\DependencyInjections\\DependencyInjection.cs",
@@ -591,11 +647,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\DependencyInjections\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T14:51:42.75Z"
+              "WhenOpened": "2025-11-03T14:51:42.75Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "UserLoginRequest.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserLoginRequest.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserLoginRequest.cs",
@@ -603,11 +660,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Application\\Models\\Requests\\User\\UserLoginRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T15:07:28.953Z"
+              "WhenOpened": "2025-11-04T15:07:28.953Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Application\\DependencyInjections\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Application\\DependencyInjections\\DependencyInjection.cs",
@@ -615,11 +673,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Application\\DependencyInjections\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T14:51:34.806Z"
+              "WhenOpened": "2025-11-03T14:51:34.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "RefreshTokenRepository.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\RefreshTokenRepository.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\RefreshTokenRepository.cs",
@@ -627,11 +686,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\RepositoryImplements\\RefreshTokenRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T00:27:34.328Z"
+              "WhenOpened": "2025-11-06T00:27:34.328Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "IRoleRepository.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\RepositoryContracts\\IRoleRepository.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IRoleRepository.cs",
@@ -639,11 +699,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IRoleRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T14:59:35.397Z"
+              "WhenOpened": "2025-11-04T14:59:35.397Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "IRefreshTokenRepository.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\RepositoryContracts\\IRefreshTokenRepository.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IRefreshTokenRepository.cs",
@@ -651,11 +712,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\RepositoryContracts\\IRefreshTokenRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T14:59:56.915Z"
+              "WhenOpened": "2025-11-04T14:59:56.915Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "EncryptionExtensions.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Encrypts\\EncryptionExtensions.cs",
               "RelativeDocumentMoniker": "PureCosmetics.Commons\\Encrypts\\EncryptionExtensions.cs",
@@ -663,11 +725,12 @@
               "RelativeToolTip": "PureCosmetics.Commons\\Encrypts\\EncryptionExtensions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwCYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:52:13.068Z"
+              "WhenOpened": "2025-10-12T01:52:13.068Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Base\\BaseEntity.cs",
               "RelativeDocumentMoniker": "PureCosmetics.Commons\\Base\\BaseEntity.cs",
@@ -675,11 +738,12 @@
               "RelativeToolTip": "PureCosmetics.Commons\\Base\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:11:24.811Z"
+              "WhenOpened": "2025-10-12T01:11:24.811Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "PureCosmetics.AuthService.Api.http",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.http",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.http",
@@ -687,11 +751,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Api\\PureCosmetics.AuthService.Api.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-11-03T15:15:08.197Z"
+              "WhenOpened": "2025-11-03T15:15:08.197Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "RefreshToken.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\RefreshToken.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\Entities\\RefreshToken.cs",
@@ -699,11 +764,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\Entities\\RefreshToken.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:16:53.05Z"
+              "WhenOpened": "2025-10-12T02:16:53.05Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "IDbContext.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\ORM\\IDbContext.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\ORM\\IDbContext.cs",
@@ -711,11 +777,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\ORM\\IDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T14:52:42.105Z"
+              "WhenOpened": "2025-11-03T14:52:42.105Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "20251012032842_init-auth.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\Migrations\\20251012032842_init-auth.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\Migrations\\20251012032842_init-auth.cs",
@@ -723,11 +790,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\Migrations\\20251012032842_init-auth.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T03:28:43.14Z"
+              "WhenOpened": "2025-10-12T03:28:43.14Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "RolePermission.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\RolePermission.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\Entities\\RolePermission.cs",
@@ -735,11 +803,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\Entities\\RolePermission.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:16:09.548Z"
+              "WhenOpened": "2025-10-12T02:16:09.548Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "Permission.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\Permission.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\Entities\\Permission.cs",
@@ -747,11 +816,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\Entities\\Permission.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:15:31.179Z"
+              "WhenOpened": "2025-10-12T02:15:31.179Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "UserRole.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\UserRole.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\Entities\\UserRole.cs",
@@ -759,11 +829,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\Entities\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:14:18.977Z"
+              "WhenOpened": "2025-10-12T02:14:18.977Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "20251012033050_init-authv2.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Infrastructure\\Migrations\\20251012033050_init-authv2.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Infrastructure\\Migrations\\20251012033050_init-authv2.cs",
@@ -771,11 +842,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Infrastructure\\Migrations\\20251012033050_init-authv2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T03:30:51.058Z"
+              "WhenOpened": "2025-10-12T03:30:51.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.AuthService.Domain\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "PureCosmetics.AuthService.Domain\\Entities\\Role.cs",
@@ -783,11 +855,12 @@
               "RelativeToolTip": "PureCosmetics.AuthService.Domain\\Entities\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T02:12:57.832Z"
+              "WhenOpened": "2025-10-12T02:12:57.832Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "IHasModificationTime.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Base\\IHasModificationTime.cs",
               "RelativeDocumentMoniker": "PureCosmetics.Commons\\Base\\IHasModificationTime.cs",
@@ -795,11 +868,12 @@
               "RelativeToolTip": "PureCosmetics.Commons\\Base\\IHasModificationTime.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:20:16.825Z"
+              "WhenOpened": "2025-10-12T01:20:16.825Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "IHasCreationTime.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Base\\IHasCreationTime.cs",
               "RelativeDocumentMoniker": "PureCosmetics.Commons\\Base\\IHasCreationTime.cs",
@@ -807,11 +881,12 @@
               "RelativeToolTip": "PureCosmetics.Commons\\Base\\IHasCreationTime.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:18:18.012Z"
+              "WhenOpened": "2025-10-12T01:18:18.012Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "IDeletable.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Base\\IDeletable.cs",
               "RelativeDocumentMoniker": "PureCosmetics.Commons\\Base\\IDeletable.cs",
@@ -819,11 +894,12 @@
               "RelativeToolTip": "PureCosmetics.Commons\\Base\\IDeletable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:17:42.138Z"
+              "WhenOpened": "2025-10-12T01:17:42.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "IActivatable.cs",
               "DocumentMoniker": "D:\\Cosmetics\\PureCosmetics.Commons\\Base\\IActivatable.cs",
               "RelativeDocumentMoniker": "PureCosmetics.Commons\\Base\\IActivatable.cs",
@@ -831,7 +907,8 @@
               "RelativeToolTip": "PureCosmetics.Commons\\Base\\IActivatable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T01:16:38.649Z"
+              "WhenOpened": "2025-10-12T01:16:38.649Z",
+              "EditorCaption": ""
             }
           ]
         }

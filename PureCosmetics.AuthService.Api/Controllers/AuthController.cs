@@ -13,12 +13,14 @@ namespace PureCosmetics.AuthService.Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        #region Fields and Constructors
         private readonly IUserService _userService;
         public AuthController(IUserService userService)
         {
             _userService = userService;
         }
-
+        #endregion
+        #region Writes
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserCreateRequest request)
         {
@@ -64,33 +66,29 @@ namespace PureCosmetics.AuthService.Api.Controllers
             }
             return Ok(result);
         }
-
-        [HttpPost]
-        public IActionResult DebugJwt([FromBody] string token, [FromServices] IConfiguration cfg)
+        #endregion
+        #region Reads
+        [HttpGet]
+        public async Task<IActionResult> GetUserById([FromQuery] UserGetByIdRequest request)
         {
-            static string B64Url(byte[] x) =>
-                Convert.ToBase64String(x).TrimEnd('=').Replace('+', '-').Replace('/', '_');
-
-            var secret = (cfg["JWT:SecretKey"] ?? "").Trim();
-            var parts = token?.Split('.') ?? Array.Empty<string>();
-            if (parts.Length != 3) return BadRequest("Token không hợp lệ (không đủ 3 phần).");
-
-            var signingInput = parts[0] + "." + parts[1];
-
-            using var hmac = new System.Security.Cryptography.HMACSHA256(Encoding.UTF8.GetBytes(secret));
-            var calcSig = B64Url(hmac.ComputeHash(Encoding.UTF8.GetBytes(signingInput)));
-            var equal = string.Equals(calcSig, parts[2], StringComparison.Ordinal);
-
-            return Ok(new
+            var result = await _userService.GetUserById(request);
+            if (!result.IsSuccess)
             {
-                header = parts[0],
-                payload = parts[1],
-                tokenSig_head = parts[2][..Math.Min(10, parts[2].Length)],
-                calcSig_head = calcSig[..Math.Min(10, calcSig.Length)],
-                signatureEqual = equal,
-                secretLen = secret.Length
-            });
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers([FromQuery] UserGetsRequest request)
+        {
+            var result = await _userService.GetAllUsers(request);
+            if (!result.IsSuccess)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+        #endregion
     }
 }

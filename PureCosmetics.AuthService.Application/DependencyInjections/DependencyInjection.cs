@@ -15,6 +15,7 @@ namespace PureCosmetics.AuthService.Application.DependencyInjections
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAddressService, AddressService>();
             return services;
         }
     }
