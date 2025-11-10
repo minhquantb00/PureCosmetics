@@ -6,6 +6,7 @@ using PureCosmetics.AuthService.Application.Models.Responses.Address;
 using PureCosmetics.AuthService.Application.ServiceContracts;
 using PureCosmetics.AuthService.Domain.Entities;
 using PureCosmetics.AuthService.Domain.RepositoryContracts;
+using PureCosmetics.Commons.HttpContext;
 using PureCosmetics.Commons.Paginations;
 using System;
 using System.Collections.Generic;
@@ -29,13 +30,13 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
         #region Writes
         public async Task<ApiResponse<DataAddressResponse>> CreateAddress(AddressCreateRequest request)
         {
-            var currentUser = _httpContextAccessor.HttpContext?.User;
-            if(!currentUser!.Identity!.IsAuthenticated)
+            bool isAuthenticated = HttpContextHelper.IsUserAuthenticated(_httpContextAccessor);
+            if (!isAuthenticated)
             {
                 return ApiResponse<DataAddressResponse>.Fail("User is not authenticated", System.Net.HttpStatusCode.Unauthorized);
             }
 
-            int currentUserId = int.Parse(currentUser.FindFirst("Id")!.Value);
+            int currentUserId = HttpContextHelper.CurrentUserId(_httpContextAccessor);
             var addressEntity = new Address(request.AddressUser, currentUserId, request.CustomerName, request.PhoneNumber, currentUserId);
             
             await _addressRepository.CreateAsyn(addressEntity);
@@ -52,7 +53,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             {
                 return ApiResponse<DataAddressResponse>.Fail("Address not found", System.Net.HttpStatusCode.NotFound);
             }
-            int currentUserId = int.Parse(_httpContextAccessor.HttpContext?.User.FindFirst("Id")!.Value!);
+            int currentUserId = HttpContextHelper.CurrentUserId(_httpContextAccessor);
             entity.Change(request.AddressUser, request.CustomerName, request.PhoneNumber, currentUserId);
 
             await _addressRepository.UpdateAsync(entity);

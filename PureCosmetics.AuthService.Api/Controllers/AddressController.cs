@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PureCosmetics.AuthService.Application.Models.Requests.Address;
 using PureCosmetics.AuthService.Application.ServiceContracts;
@@ -19,6 +21,7 @@ namespace PureCosmetics.AuthService.Api.Controllers
         #endregion
         #region Writes
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> CreateAddress([FromBody] AddressCreateRequest request)
         {
             var result = await _addressService.CreateAddress(request);
@@ -30,6 +33,7 @@ namespace PureCosmetics.AuthService.Api.Controllers
         }
 
         [HttpPut]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> UpdateAddress([FromBody] AddressUpdateRequest request)
         {
             var result = await _addressService.UpdateAddress(request);
@@ -40,6 +44,7 @@ namespace PureCosmetics.AuthService.Api.Controllers
             return Ok(result);
         }
         [HttpDelete]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> DeleteAddress([FromBody] AddressDeleteRequest request)
         {
             var result = await _addressService.DeleteAddress(request);

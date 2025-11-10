@@ -62,7 +62,7 @@ namespace PureCosmetics.AuthService.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Address");
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("PureCosmetics.AuthService.Domain.Entities.Permission", b =>

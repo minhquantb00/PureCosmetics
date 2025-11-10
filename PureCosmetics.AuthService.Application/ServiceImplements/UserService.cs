@@ -13,6 +13,7 @@ using PureCosmetics.AuthService.Domain.Entities;
 using PureCosmetics.AuthService.Domain.RepositoryContracts;
 using PureCosmetics.Commons.Constants;
 using PureCosmetics.Commons.Encrypts;
+using PureCosmetics.Commons.HttpContext;
 using PureCosmetics.Commons.Paginations;
 using System;
 using System.Collections.Generic;
@@ -103,8 +104,8 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                     Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
                 };
             }
-            ClaimsPrincipal currentUser = _httpContextAccessor.HttpContext!.User;
-            if (!currentUser.Identity!.IsAuthenticated)
+            bool isAuthenticated = HttpContextHelper.IsUserAuthenticated(_httpContextAccessor);
+            if (!isAuthenticated)
             {
                 return new ApiResponse<DataUserResponse>
                 {
@@ -127,7 +128,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                     Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
                 };
             }
-            int currentUserId = int.Parse(currentUser.FindFirst("Id")!.Value);
+            int currentUserId = HttpContextHelper.CurrentUserId(_httpContextAccessor);
             if (user.Id != currentUserId)
             {
                 return new ApiResponse<DataUserResponse>

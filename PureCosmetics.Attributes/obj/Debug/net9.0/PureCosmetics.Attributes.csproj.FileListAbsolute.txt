@@ -1,0 +1,13 @@
+D:\Cosmetics\PureCosmetics.Attributes\bin\Debug\net9.0\PureCosmetics.Attributes.deps.json
+D:\Cosmetics\PureCosmetics.Attributes\bin\Debug\net9.0\PureCosmetics.Attributes.dll
+D:\Cosmetics\PureCosmetics.Attributes\bin\Debug\net9.0\PureCosmetics.Attributes.pdb
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.csproj.AssemblyReference.cache
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.AssemblyInfoInputs.cache
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.AssemblyInfo.cs
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.csproj.CoreCompileInputs.cache
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.sourcelink.json
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.dll
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\refint\PureCosmetics.Attributes.dll
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\PureCosmetics.Attributes.pdb
+D:\Cosmetics\PureCosmetics.Attributes\obj\Debug\net9.0\ref\PureCosmetics.Attributes.dll

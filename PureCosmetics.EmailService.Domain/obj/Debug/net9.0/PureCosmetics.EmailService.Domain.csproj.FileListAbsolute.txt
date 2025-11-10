@@ -1,0 +1,16 @@
+D:\Cosmetics\PureCosmetics.EmailService.Domain\bin\Debug\net9.0\PureCosmetics.EmailService.Domain.deps.json
+D:\Cosmetics\PureCosmetics.EmailService.Domain\bin\Debug\net9.0\PureCosmetics.EmailService.Domain.dll
+D:\Cosmetics\PureCosmetics.EmailService.Domain\bin\Debug\net9.0\PureCosmetics.EmailService.Domain.pdb
+D:\Cosmetics\PureCosmetics.EmailService.Domain\bin\Debug\net9.0\PureCosmetics.Commons.dll
+D:\Cosmetics\PureCosmetics.EmailService.Domain\bin\Debug\net9.0\PureCosmetics.Commons.pdb
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.csproj.AssemblyReference.cache
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.AssemblyInfoInputs.cache
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.AssemblyInfo.cs
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.csproj.CoreCompileInputs.cache
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.sourcelink.json
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosm.4776B86F.Up2Date
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.dll
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\refint\PureCosmetics.EmailService.Domain.dll
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\PureCosmetics.EmailService.Domain.pdb
+D:\Cosmetics\PureCosmetics.EmailService.Domain\obj\Debug\net9.0\ref\PureCosmetics.EmailService.Domain.dll
