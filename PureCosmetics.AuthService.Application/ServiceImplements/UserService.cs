@@ -26,15 +26,46 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Application.ServiceImplements
 {
+    /// <summary>
+    /// Functionality for user management
+    /// User create: QuanTM
+    /// Created date: 2025/12/11
+    /// Last updated: 2025/12/11
+    /// </summary>
     public class UserService : IUserService
     {
         #region Fields
+
+        /// <summary>
+        /// Repository for user entity
+        /// </summary>
         private readonly IUserRepository _userRepository;
+
+        /// <summary>
+        /// Repository for refresh token entity
+        /// </summary>
         private readonly IRefreshTokenRepository _refreshTokenRepository;
+
+        /// <summary>
+        /// Interface for configuration
+        /// </summary>
         private readonly IConfiguration _configuration;
+
+        /// <summary>
+        /// Provides access to the current HTTP context for the associated request.
+        /// </summary>
         private readonly IHttpContextAccessor _httpContextAccessor;
+
         #endregion
+
         #region Constructors
+        /// <summary>
+        /// Constructor for UserService
+        /// </summary>
+        /// <param name="userRepository"></param>
+        /// <param name="configuration"></param>
+        /// <param name="refreshTokenRepository"></param>
+        /// <param name="httpContextAccessor"></param>
         public UserService(IUserRepository userRepository, IConfiguration configuration, IRefreshTokenRepository refreshTokenRepository, IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository;
@@ -44,6 +75,12 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
         }
         #endregion
         #region Writes
+        /// <summary>
+        /// Creates a new user account based on the specified request.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public async Task<ApiResponse<DataUserResponse>> CreateUser(UserCreateRequest request)
         {
             UserValidate validator = new UserValidate();
@@ -53,7 +90,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 return new ApiResponse<DataUserResponse>
                 {
                     IsSuccess = false,
-                    Message = "Validation errors",
+                    Message = MessageConstantForUser.VALIDATION_ERROR,
                     Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
                 };
             }
@@ -64,8 +101,8 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 return new ApiResponse<DataUserResponse>
                 {
                     IsSuccess = false,
-                    Message = "User with the same PhoneNumber or Email already exists.",
-                    Errors = new List<string> { "Duplicate PhoneNumber or Email." }
+                    Message = MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER,
+                    Errors = new List<string> { MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER }
                 };
             }
             var listUser = await _userRepository.GetAllAsync();
@@ -78,15 +115,15 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
 
             if(user == null)
             {
-                throw new ArgumentNullException("User is null");
+                throw new ArgumentNullException(MessageConstantForUser.USER_IS_NULL);
             }
-            await _userRepository.AddRoleToUserAsync(user, new List<string> { "ROLE_CUSTOMER" });
+            await _userRepository.AddRoleToUserAsync(user, new List<string> { Roles.ROLE_CUSTOMER });
             return new ApiResponse<DataUserResponse>
             {
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
                 TimeStamp = DateTime.Now,
-                Message = "Account created successfully!",
+                Message = MessageConstantForUser.USER_CREATED,
                 Data = UserMapping.EntityToDto(user)
             };
         }

@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 namespace PureCosmetics.EmailService.Domain.Entities
 {
     [Index(nameof(EmailAddress), nameof(OccurredAt))]
-    public class BounceLog : BaseEntity<int>
+    public class BounceLog
     {
-        [Key] public long Id { get; set; }
+        [Key] public long Id { get; set; } = default!;
 
         [Required, MaxLength(320)] public string EmailAddress { get; set; } = default!;
         [MaxLength(50)] public string? Provider { get; set; }
