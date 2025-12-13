@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PureCosmetics.EmailService.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f55337aaa86773d4115476ee379e4829b653aedc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17498f0558be351cf00055729a9e07485b5f77ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("PureCosmetics.EmailService.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PureCosmetics.EmailService.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
