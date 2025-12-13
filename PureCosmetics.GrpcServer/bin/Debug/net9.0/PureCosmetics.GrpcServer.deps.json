@@ -67,9 +67,6 @@
         }
       },
       "protobuf-net.Core/3.2.30": {
-        "dependencies": {
-          "System.Collections.Immutable": "7.0.0"
-        },
         "runtime": {
           "lib/net6.0/protobuf-net.Core.dll": {
             "assemblyVersion": "3.0.0.0",
@@ -80,7 +77,6 @@
       "protobuf-net.Grpc/1.2.2": {
         "dependencies": {
           "Grpc.Core.Api": "2.66.0",
-          "System.IO.Pipelines": "8.0.0",
           "protobuf-net": "3.2.30"
         },
         "runtime": {
@@ -138,9 +134,7 @@
             "fileVersion": "3.2.12.9385"
           }
         }
-      },
-      "System.Collections.Immutable/7.0.0": {},
-      "System.IO.Pipelines/8.0.0": {}
+      }
     }
   },
   "libraries": {
@@ -225,20 +219,6 @@
       "sha512": "sha512-bpNTENWPqP2mx1sJJ5C6qZ2xP+f/E3dQF9MYY+xZ+RHxe3sLg+sPyBSCcJDTCY0e4dVIwQ/02gS8m4tVClDoKQ==",
       "path": "protobuf-net.reflection/3.2.12",
       "hashPath": "protobuf-net.reflection.3.2.12.nupkg.sha512"
-    },
-    "System.Collections.Immutable/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
-      "path": "system.collections.immutable/7.0.0",
-      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
-    },
-    "System.IO.Pipelines/8.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
-      "path": "system.io.pipelines/8.0.0",
-      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
     }
   }
 }
