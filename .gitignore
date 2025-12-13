@@ -20,3 +20,8 @@ obj/
 *.ctx
 *.context.json
 *.ctx.json
+.vs/
+**/CopilotIndices/
+*.db
+*.db-shm
+*.db-wal
