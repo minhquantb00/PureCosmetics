@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+
+# Copilot / VS index databases
+**/CopilotIndices/
+*.db
+*.db-shm
+*.db-wal
+
+# AI / tool generated "context" artifacts (chỉ ignore file sinh ra, không đụng *Context.cs)
+*.context
+*.ctx
+*.context.json
+*.ctx.json
