@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Application.Mappers
 {
+    /// <summary>
+    /// Mapping class for address
+    /// User create: QuanTM
+    /// </summary>
     public class AddressMapping
     {
+        /// <summary>
+        /// Map from Entity address to Dto address
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
         public static DataAddressResponse EntityToDto(Address address)
         {
             return new DataAddressResponse

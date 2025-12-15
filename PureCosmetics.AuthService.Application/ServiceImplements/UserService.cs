@@ -74,6 +74,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             _httpContextAccessor = httpContextAccessor;
         }
         #endregion
+
         #region Writes
         /// <summary>
         /// Creates a new user account based on the specified request.
@@ -128,6 +129,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Implement logic update user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataUserResponse>> UpdateUser(UserUpdateRequest request)
         {
             var validator = new UserUpdateValidate();
@@ -192,6 +198,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Implement logic delete user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataUserResponse>> DeleteUser(UserDeleteRequest request)
         {
             var currentUser = _httpContextAccessor.HttpContext!.User;
@@ -253,6 +264,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Implement logic login
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataResponseLogin>> Login(UserLoginRequest request)
         {
             UserLoginValidate validator = new UserLoginValidate();
@@ -301,7 +317,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
         #endregion
+
         #region Reads
+
+        /// <summary>
+        /// Implement logic get all user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<PagedResult<DataUserResponse>>> GetAllUsers(UserGetsRequest request)
         {
             var query = await _userRepository.GetAllAsync(x => x.IsDeleted == false && x.IsActive == true);
@@ -321,6 +344,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 : ApiResponse<PagedResult<DataUserResponse>>.Fail("Failed to retrieve users.", HttpStatusCode.InternalServerError);
         }
 
+        /// <summary>
+        /// Implement logic get user by id
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataUserResponse>> GetUserById(UserGetByIdRequest request)
         {
             var user = await _userRepository.GetByIdAsync(request.Id);
@@ -329,7 +357,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 : ApiResponse<DataUserResponse>.Fail("User not found.", HttpStatusCode.NotFound);
         }
         #endregion
+
         #region Private Methods
+        /// <summary>
+        /// Get jwt token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         private async Task<DataResponseLogin> GetJwtTokenAsync(User user)
         {
             if (user == null)
@@ -370,6 +405,12 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Create token
+        /// </summary>
+        /// <param name="claims"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         private JwtSecurityToken CreateJwt(List<Claim> claims)
         {
             var secret = (_configuration["JWT:SecretKey"] ?? "").Trim();
@@ -396,7 +437,10 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             );
         }
 
-
+        /// <summary>
+        /// Render refresh token
+        /// </summary>
+        /// <returns></returns>
         private string GenerateRefreshToken()
         {
             var bytes = new byte[64];
