@@ -26,15 +26,46 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Application.ServiceImplements
 {
+    /// <summary>
+    /// Functionality for user management
+    /// User create: QuanTM
+    /// Created date: 2025/12/11
+    /// Last updated: 2025/12/11
+    /// </summary>
     public class UserService : IUserService
     {
         #region Fields
+
+        /// <summary>
+        /// Repository for user entity
+        /// </summary>
         private readonly IUserRepository _userRepository;
+
+        /// <summary>
+        /// Repository for refresh token entity
+        /// </summary>
         private readonly IRefreshTokenRepository _refreshTokenRepository;
+
+        /// <summary>
+        /// Interface for configuration
+        /// </summary>
         private readonly IConfiguration _configuration;
+
+        /// <summary>
+        /// Provides access to the current HTTP context for the associated request.
+        /// </summary>
         private readonly IHttpContextAccessor _httpContextAccessor;
+
         #endregion
+
         #region Constructors
+        /// <summary>
+        /// Constructor for UserService
+        /// </summary>
+        /// <param name="userRepository"></param>
+        /// <param name="configuration"></param>
+        /// <param name="refreshTokenRepository"></param>
+        /// <param name="httpContextAccessor"></param>
         public UserService(IUserRepository userRepository, IConfiguration configuration, IRefreshTokenRepository refreshTokenRepository, IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository;
@@ -43,7 +74,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             _httpContextAccessor = httpContextAccessor;
         }
         #endregion
+
         #region Writes
+        /// <summary>
+        /// Creates a new user account based on the specified request.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public async Task<ApiResponse<DataUserResponse>> CreateUser(UserCreateRequest request)
         {
             UserValidate validator = new UserValidate();
@@ -53,7 +91,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 return new ApiResponse<DataUserResponse>
                 {
                     IsSuccess = false,
-                    Message = "Validation errors",
+                    Message = MessageConstantForUser.VALIDATION_ERROR,
                     Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
                 };
             }
@@ -64,8 +102,8 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 return new ApiResponse<DataUserResponse>
                 {
                     IsSuccess = false,
-                    Message = "User with the same PhoneNumber or Email already exists.",
-                    Errors = new List<string> { "Duplicate PhoneNumber or Email." }
+                    Message = MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER,
+                    Errors = new List<string> { MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER }
                 };
             }
             var listUser = await _userRepository.GetAllAsync();
@@ -78,19 +116,24 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
 
             if(user == null)
             {
-                throw new ArgumentNullException("User is null");
+                throw new ArgumentNullException(MessageConstantForUser.USER_IS_NULL);
             }
-            await _userRepository.AddRoleToUserAsync(user, new List<string> { "ROLE_CUSTOMER" });
+            await _userRepository.AddRoleToUserAsync(user, new List<string> { Roles.ROLE_CUSTOMER });
             return new ApiResponse<DataUserResponse>
             {
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
                 TimeStamp = DateTime.Now,
-                Message = "Account created successfully!",
+                Message = MessageConstantForUser.USER_CREATED,
                 Data = UserMapping.EntityToDto(user)
             };
         }
 
+        /// <summary>
+        /// Implement logic update user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataUserResponse>> UpdateUser(UserUpdateRequest request)
         {
             var validator = new UserUpdateValidate();
@@ -155,6 +198,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Implement logic delete user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataUserResponse>> DeleteUser(UserDeleteRequest request)
         {
             var currentUser = _httpContextAccessor.HttpContext!.User;
@@ -216,6 +264,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Implement logic login
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataResponseLogin>> Login(UserLoginRequest request)
         {
             UserLoginValidate validator = new UserLoginValidate();
@@ -264,7 +317,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
         #endregion
+
         #region Reads
+
+        /// <summary>
+        /// Implement logic get all user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<PagedResult<DataUserResponse>>> GetAllUsers(UserGetsRequest request)
         {
             var query = await _userRepository.GetAllAsync(x => x.IsDeleted == false && x.IsActive == true);
@@ -284,6 +344,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 : ApiResponse<PagedResult<DataUserResponse>>.Fail("Failed to retrieve users.", HttpStatusCode.InternalServerError);
         }
 
+        /// <summary>
+        /// Implement logic get user by id
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataUserResponse>> GetUserById(UserGetByIdRequest request)
         {
             var user = await _userRepository.GetByIdAsync(request.Id);
@@ -292,7 +357,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 : ApiResponse<DataUserResponse>.Fail("User not found.", HttpStatusCode.NotFound);
         }
         #endregion
+
         #region Private Methods
+        /// <summary>
+        /// Get jwt token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         private async Task<DataResponseLogin> GetJwtTokenAsync(User user)
         {
             if (user == null)
@@ -333,6 +405,12 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             };
         }
 
+        /// <summary>
+        /// Create token
+        /// </summary>
+        /// <param name="claims"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         private JwtSecurityToken CreateJwt(List<Claim> claims)
         {
             var secret = (_configuration["JWT:SecretKey"] ?? "").Trim();
@@ -359,7 +437,10 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             );
         }
 
-
+        /// <summary>
+        /// Render refresh token
+        /// </summary>
+        /// <returns></returns>
         private string GenerateRefreshToken()
         {
             var bytes = new byte[64];

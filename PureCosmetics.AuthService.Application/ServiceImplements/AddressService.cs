@@ -16,18 +16,45 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Application.ServiceImplements
 {
+    /// <summary>
+    /// Implement logic for Address Service
+    /// User create: QuanTM
+    /// Created date: 2025/12/13
+    /// Last modified date: 2025/12/13
+    /// </summary>
     public class AddressService : IAddressService
     {
         #region Fields and Constructors
+
+        /// <summary>
+        /// Interface address repository
+        /// </summary>
         private readonly IAddressRepository _addressRepository;
+
+        /// <summary>
+        /// Interface http contex accessor
+        /// </summary>
         private readonly IHttpContextAccessor _httpContextAccessor;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="addressRepository"></param>
+        /// <param name="httpContextAccessor"></param>
         public AddressService(IAddressRepository addressRepository, IHttpContextAccessor httpContextAccessor)
         {
             _addressRepository = addressRepository;
             _httpContextAccessor = httpContextAccessor;
         }
         #endregion
+
         #region Writes
+
+        /// <summary>
+        /// Implement logic create address
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataAddressResponse>> CreateAddress(AddressCreateRequest request)
         {
             bool isAuthenticated = HttpContextHelper.IsUserAuthenticated(_httpContextAccessor);
@@ -46,6 +73,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             return ApiResponse<DataAddressResponse>.Created(response, "Address created successfully");
         }
 
+        /// <summary>
+        /// Implement logic update address
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataAddressResponse>> UpdateAddress(AddressUpdateRequest request)
         {
             var entity =  await _addressRepository.GetByIdAsync(request.Id);
@@ -62,6 +94,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             return ApiResponse<DataAddressResponse>.Success(response, "Address updated successfully");
         }
 
+        /// <summary>
+        /// Implement logic delete address
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataAddressResponse>> DeleteAddress(AddressDeleteRequest request)
         {
             var entity = await _addressRepository.GetByIdAsync(request.Id);
@@ -74,7 +111,14 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             return ApiResponse<DataAddressResponse>.Success(null!, "Address deleted successfully");
         }
         #endregion
+
         #region Reads
+
+        /// <summary>
+        /// Implement logic get address
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddresses(AddressGetsRequest request)
         {
             var query = await _addressRepository.GetAllAsync();
@@ -90,6 +134,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             return ApiResponse<PagedResult<DataAddressResponse>>.Success(pagedResult, "Addresses retrieved successfully");
         }
 
+        /// <summary>
+        /// Implement logic get address by id
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<DataAddressResponse>> GetAddressesById(AddressGetByIdRequest request)
         {
             var entity = await _addressRepository.GetByIdAsync(request.Id);
@@ -101,6 +150,11 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             return ApiResponse<DataAddressResponse>.Success(response, "Address retrieved successfully");
         }
 
+        /// <summary>
+        /// Implement logic get addresses by user id
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<ApiResponse<PagedResult<DataAddressResponse>>> GetAddressesByUserId(AddressGetByUserIdRequest request)
         {
             var query = await _addressRepository.GetAllAsync(x => x.UserId == request.UserId);

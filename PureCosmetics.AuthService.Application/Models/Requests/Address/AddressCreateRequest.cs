@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Application.Models.Requests.Address
 {
+    /// <summary>
+    /// Record for address create request
+    /// User create: QuanTM
+    /// Created date: 2025/12/14
+    /// Last modified date: 2025/12/14
+    /// </summary>
     [ProtoContract]
     public record AddressCreateRequest
     {

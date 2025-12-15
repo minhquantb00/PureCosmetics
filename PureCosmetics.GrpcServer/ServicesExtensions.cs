@@ -10,8 +10,19 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.GrpcServer
 {
+    /// <summary>
+    /// Services extensions for configuring Code-First gRPC services.
+    /// User create: QuanTM
+    /// Created date: 2025/12/11
+    /// Last modified date: 2025/12/11
+    /// </summary>
     public static class ServicesExtensions
     {
+        /// <summary>
+        /// Configures Code-First gRPC services with custom settings.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection ConfigCodeFirstGrpc(this IServiceCollection services)
         {
             services.AddCodeFirstGrpc(config =>
