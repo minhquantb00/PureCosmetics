@@ -68,5 +68,36 @@ namespace PureCosmetics.EmailService.Domain.Entities
             CreationTime = creationTime;
             CreatorUserId = creatorUserId;
         }
+
+        public void MarkSending()
+        {
+            Status = EmailStatusEnum.Sending;
+            LastErrorMessage = null;
+        }
+
+        public void MarkSent(string providerMessageId)
+        {
+            Status = EmailStatusEnum.Sent;
+            ProviderMessageId = providerMessageId;
+            SentAt = DateTime.UtcNow;
+            LastErrorMessage = null;
+        }
+
+        public void Fail(string error)
+        {
+            Attempts++;
+            LastErrorMessage = error;
+            Status = EmailStatusEnum.Failed;
+        }
+
+        public void DeferWithBackoff(string error)
+        {
+            Attempts++;
+            LastErrorMessage = error;
+            Status = EmailStatusEnum.Deferred;
+            var mins = Attempts switch { 1 => 1, 2 => 5, 3 => 15, _ => 60 };
+            ScheduleAt = DateTime.UtcNow.AddMinutes(mins);
+            Status = EmailStatusEnum.Queued;
+        }
     }
 }

@@ -8,8 +8,19 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Application.Mappers
 {
+    /// <summary>
+    /// Mapping class for user
+    /// User create: QuanTM
+    /// Created date: 2025/12/13
+    /// Last modified date: 2025/12/13
+    /// </summary>
     public class UserMapping
     {
+        /// <summary>
+        /// Map from entity user to dto user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static DataUserResponse EntityToDto(User user)
         {
             return new DataUserResponse

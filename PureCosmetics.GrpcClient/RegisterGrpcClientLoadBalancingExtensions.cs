@@ -11,14 +11,31 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.GrpcClient
 {
+    /// <summary>
+    /// GRPC client resolver extensions for registering gRPC clients with load balancing and retry policies.
+    /// User create: QuanTM
+    /// Created date: 2025/12/11
+    /// Last modified date: 2025/12/11
+    /// </summary>
     public static partial class GrpcClientResolver
     {
+        /// <summary>
+        /// Registers gRPC client load balancing support.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection RegisterGrpcClientLoadBalancing(this IServiceCollection services)
         {
             AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
             return services;
         }
 
+        /// <summary>
+        /// Configures gRPC client options with load balancing and retry policies.
+        /// </summary>
+        /// <param name="grpcClientFactoryOptions"></param>
+        /// <param name="address"></param>
+        /// <param name="serviceProvider"></param>
         private static void ConfigGrpcClientOptions(GrpcClientFactoryOptions grpcClientFactoryOptions, string address,
         IServiceProvider serviceProvider)
         {
@@ -58,6 +75,13 @@ namespace PureCosmetics.GrpcClient
             });
         }
 
+        /// <summary>
+        /// Registers a gRPC client with load balancing support.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="services"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
         public static IServiceCollection RegisterGrpcClientLoadBalancing<T>(this IServiceCollection services, string? url)
         where T : class
         {
@@ -76,6 +100,14 @@ namespace PureCosmetics.GrpcClient
             return services;
         }
 
+        /// <summary>
+        /// Registers a gRPC client with load balancing support and a specified name.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="services"></param>
+        /// <param name="url"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static IServiceCollection RegisterGrpcClientLoadBalancing<T>(this IServiceCollection services, string? url,
         string? name)
         where T : class
