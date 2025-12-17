@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PureCosmetics.EmailService.Application.Ports")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92d79eadac935edd061579d85ba8101df389f51c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90c249a9cef6f86bb8a99c10e6bc581b2dd39f8f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PureCosmetics.EmailService.Application.Ports")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PureCosmetics.EmailService.Application.Ports")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
