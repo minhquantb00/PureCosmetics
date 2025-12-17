@@ -12,17 +12,57 @@ using static Grpc.Core.Interceptors.Interceptor;
 
 namespace PureCosmetics.GrpcClient
 {
+    /// <summary>
+    /// LoggerInterceptor class for gRPC client calls to log request and response details.
+    /// User create: QuanTM
+    /// Created date: 2025/12/11
+    /// Last modified date: 2025/12/11
+    /// </summary>
+    /// <param name="logger"></param>
+    /// <param name="httpContextAccessor"></param>
     public class LoggerInterceptor(
     ILogger<LoggerInterceptor> logger,
     IHttpContextAccessor? httpContextAccessor
 ) : Interceptor
     {
-        private const string MicroserviceCallerUserName = "caller-user";
-        private const string MicroserviceCallerMachineName = "caller-machine";
-        private const string MicroserviceCallerOsVersion = "caller-os";
-        private const string MicroserviceCallerSessionCode = "caller-vnnss";
-        public string? Host { get; set; }
+        #region Fields and Constants
 
+        /// <summary>
+        /// Microservice caller metadata keys
+        /// </summary>
+        private const string MicroserviceCallerUserName = "caller-user";
+
+        /// <summary>
+        /// Microservice caller machine name metadata key
+        /// </summary>
+        private const string MicroserviceCallerMachineName = "caller-machine";
+
+        /// <summary>
+        /// Microservice caller OS version metadata key
+        /// </summary>
+        private const string MicroserviceCallerOsVersion = "caller-os";
+
+        /// <summary>
+        /// Microservice caller session code metadata key
+        /// </summary>
+        private const string MicroserviceCallerSessionCode = "caller-vnnss";
+
+        /// <summary>
+        /// Host of the gRPC service being called
+        /// </summary>
+        public string? Host { get; set; }
+        #endregion
+
+        #region Public Methods
+        /// <summary>
+        /// Unary call interception to add logging and caller metadata
+        /// </summary>
+        /// <typeparam name="TRequest"></typeparam>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <param name="continuation"></param>
+        /// <returns></returns>
         public override AsyncUnaryCall<TResponse> AsyncUnaryCall<TRequest, TResponse>(
             TRequest request,
             ClientInterceptorContext<TRequest, TResponse> context,
@@ -38,6 +78,67 @@ namespace PureCosmetics.GrpcClient
                 call.GetStatus, call.GetTrailers, call.Dispose);
         }
 
+        /// <summary>
+        /// Streaming call interception to add logging and caller metadata
+        /// </summary>
+        /// <typeparam name="TRequest"></typeparam>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="context"></param>
+        /// <param name="continuation"></param>
+        /// <returns></returns>
+        public override AsyncClientStreamingCall<TRequest, TResponse> AsyncClientStreamingCall<TRequest, TResponse>(
+            ClientInterceptorContext<TRequest, TResponse> context,
+            AsyncClientStreamingCallContinuation<TRequest, TResponse> continuation)
+        {
+            AddCallerMetadata(ref context);
+            return continuation(context);
+        }
+
+        /// <summary>
+        /// Server streaming call interception to add logging and caller metadata
+        /// </summary>
+        /// <typeparam name="TRequest"></typeparam>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <param name="continuation"></param>
+        /// <returns></returns>
+        public override AsyncServerStreamingCall<TResponse> AsyncServerStreamingCall<TRequest, TResponse>(
+            TRequest request,
+            ClientInterceptorContext<TRequest, TResponse> context,
+            AsyncServerStreamingCallContinuation<TRequest, TResponse> continuation)
+        {
+            AddCallerMetadata(ref context);
+            return continuation(request, context);
+        }
+
+        /// <summary>
+        /// Duplex streaming call interception to add logging and caller metadata
+        /// </summary>
+        /// <typeparam name="TRequest"></typeparam>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="context"></param>
+        /// <param name="continuation"></param>
+        /// <returns></returns>
+        public override AsyncDuplexStreamingCall<TRequest, TResponse> AsyncDuplexStreamingCall<TRequest, TResponse>(
+            ClientInterceptorContext<TRequest, TResponse> context,
+            AsyncDuplexStreamingCallContinuation<TRequest, TResponse> continuation)
+        {
+            AddCallerMetadata(ref context);
+            return continuation(context);
+        }
+        #endregion
+
+        #region Private Methods
+        /// <summary>
+        /// Handle the response from the gRPC call, logging execution time and errors.
+        /// </summary>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="serviceName"></param>
+        /// <param name="action"></param>
+        /// <param name="request"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
         private async Task<TResponse> HandleResponse<TResponse>(string serviceName, string action, object request,
             Task<TResponse> t)
         {
@@ -70,31 +171,14 @@ namespace PureCosmetics.GrpcClient
             }
         }
 
-        public override AsyncClientStreamingCall<TRequest, TResponse> AsyncClientStreamingCall<TRequest, TResponse>(
-            ClientInterceptorContext<TRequest, TResponse> context,
-            AsyncClientStreamingCallContinuation<TRequest, TResponse> continuation)
-        {
-            AddCallerMetadata(ref context);
-            return continuation(context);
-        }
+        
 
-        public override AsyncServerStreamingCall<TResponse> AsyncServerStreamingCall<TRequest, TResponse>(
-            TRequest request,
-            ClientInterceptorContext<TRequest, TResponse> context,
-            AsyncServerStreamingCallContinuation<TRequest, TResponse> continuation)
-        {
-            AddCallerMetadata(ref context);
-            return continuation(request, context);
-        }
-
-        public override AsyncDuplexStreamingCall<TRequest, TResponse> AsyncDuplexStreamingCall<TRequest, TResponse>(
-            ClientInterceptorContext<TRequest, TResponse> context,
-            AsyncDuplexStreamingCallContinuation<TRequest, TResponse> continuation)
-        {
-            AddCallerMetadata(ref context);
-            return continuation(context);
-        }
-
+        /// <summary>
+        /// Call to add caller metadata to the gRPC call headers
+        /// </summary>
+        /// <typeparam name="TRequest"></typeparam>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="context"></param>
         private void AddCallerMetadata<TRequest, TResponse>(ref ClientInterceptorContext<TRequest, TResponse> context)
             where TRequest : class
             where TResponse : class
@@ -150,6 +234,13 @@ namespace PureCosmetics.GrpcClient
             }
         }
 
+        /// <summary>
+        /// Log error details using the logger
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <param name="message"></param>
+        /// <param name="serviceName"></param>
+        /// <param name="action"></param>
         private void LogError(Exception exception, string message, string serviceName, string action)
         {
             using (logger.BeginScope(new Dictionary<string, object>
@@ -162,5 +253,6 @@ namespace PureCosmetics.GrpcClient
                 logger.LogError(exception, "{Message}", message);
             }
         }
+        #endregion
     }
 }
