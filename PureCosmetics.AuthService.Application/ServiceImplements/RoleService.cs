@@ -28,11 +28,6 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
         /// Interface for Role Repository operations.
         /// </summary>
         private readonly IRoleRepository _roleRepository;
-
-        /// <summary>
-        /// Interface for User Repository operations.
-        /// </summary>
-        private readonly IUserRepository _userRepository;
         #endregion
 
         #region Constructor
@@ -41,11 +36,9 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
         /// Constructor
         /// </summary>
         /// <param name="roleRepository"></param>
-        /// <param name="userRepository"></param>
-        public RoleService(IRoleRepository roleRepository, IUserRepository userRepository)
+        public RoleService(IRoleRepository roleRepository)
         {
             _roleRepository = roleRepository;
-            _userRepository = userRepository;
         }
         #endregion
 
