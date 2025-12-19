@@ -88,23 +88,13 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             var validationResult = await validator.ValidateAsync(request);
             if(!validationResult.IsValid)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    IsSuccess = false,
-                    Message = MessageConstantForUser.VALIDATION_ERROR,
-                    Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.VALIDATION_ERROR, HttpStatusCode.BadRequest, validationResult.Errors.Select(e => e.ErrorMessage).ToList());
             }
 
             var existingUser = await _userRepository.GetAsync(u => u.PhoneNumber == request.PhoneNumber || u.Email == request.Email);
             if(existingUser != null)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    IsSuccess = false,
-                    Message = MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER,
-                    Errors = new List<string> { MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER }
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER, HttpStatusCode.BadRequest, new List<string> { MessageConstantForUser.ALREADY_EXIST_EMAIL_OR_PHONENUMBER });
             }
             var listUser = await _userRepository.GetAllAsync();
 
@@ -119,14 +109,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
                 throw new ArgumentNullException(MessageConstantForUser.USER_IS_NULL);
             }
             await _userRepository.AddRoleToUserAsync(user, new List<string> { Roles.ROLE_CUSTOMER });
-            return new ApiResponse<DataUserResponse>
-            {
-                IsSuccess = true,
-                StatusCode = HttpStatusCode.OK,
-                TimeStamp = DateTime.Now,
-                Message = MessageConstantForUser.USER_CREATED,
-                Data = UserMapping.EntityToDto(user)
-            };
+            return ApiResponse<DataUserResponse>.Created(UserMapping.EntityToDto(user), MessageConstantForUser.USER_CREATED);
         }
 
         /// <summary>
@@ -138,64 +121,36 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
         {
             var validator = new UserUpdateValidate();
             var validationResult = await validator.ValidateAsync(request);
+
             if (!validationResult.IsValid)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    IsSuccess = false,
-                    Message = "Validation errors",
-                    Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.VALIDATION_ERROR, HttpStatusCode.BadRequest, validationResult.Errors.Select(e => e.ErrorMessage).ToList());
             }
+
             bool isAuthenticated = HttpContextHelper.IsUserAuthenticated(_httpContextAccessor);
             if (!isAuthenticated)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    Data = null,
-                    Errors = new List<string> { "UnAuthenticated user" },
-                    IsSuccess = false,
-                    Message = "UnAuthenticated user",
-                    StatusCode = HttpStatusCode.Unauthorized,
-                    TimeStamp = DateTime.Now,
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.UN_AUTHENTICATED, HttpStatusCode.Unauthorized, new List<string> { MessageConstantForUser.UN_AUTHENTICATED });
             }
 
             var user = await _userRepository.GetByIdAsync(request.Id);
             if(user == null)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    IsSuccess = false,
-                    Message = "User is null",
-                    Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.USER_IS_NULL, HttpStatusCode.BadRequest, new List<string> { MessageConstantForUser.USER_IS_NULL });
             }
+
             int currentUserId = HttpContextHelper.CurrentUserId(_httpContextAccessor);
+
             if (user.Id != currentUserId)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    Data = null,
-                    Errors = new List<string> { "The user does not have permission to perform this function" },
-                    IsSuccess = false,
-                    Message = "The user does not have permission to perform this function",
-                    StatusCode= HttpStatusCode.Forbidden,
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.UN_AUTHORIZED, HttpStatusCode.Forbidden, new List<string> { MessageConstantForUser.UN_AUTHORIZED });
             }
 
             user.Change(request.Id, request.Email, request.PhoneNumber, request.UserName, request.FirstName, request.LastName, request.DateOfBirth);
 
             await _userRepository.UpdateAsync(user);
 
-            return new ApiResponse<DataUserResponse>
-            {
-                Data = UserMapping.EntityToDto(user),
-                IsSuccess = true,
-                Message = "Account updated successfully!",
-                StatusCode = HttpStatusCode.OK,
-                TimeStamp = DateTime.Now
-            };
+            return ApiResponse<DataUserResponse>.Success(UserMapping.EntityToDto(user), MessageConstantForUser.USER_UPDATED);
         }
 
         /// <summary>
@@ -208,43 +163,19 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             var currentUser = _httpContextAccessor.HttpContext!.User;
             if (!currentUser.Identity!.IsAuthenticated)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    Data = null,
-                    Errors = new List<string> { "UnAuthenticated user" },
-                    IsSuccess = false,
-                    Message = "UnAuthenticated user",
-                    StatusCode = HttpStatusCode.Unauthorized,
-                    TimeStamp = DateTime.Now,
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.UN_AUTHENTICATED, HttpStatusCode.Unauthorized, new List<string> { MessageConstantForUser.UN_AUTHENTICATED });
             }
 
             var user = await _userRepository.GetByIdAsync(request.Id);
             if(user == null)
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    Data = null,
-                    Errors = new List<string> { "User is null"},
-                    IsSuccess = false,
-                    Message = "User is null",
-                    StatusCode = HttpStatusCode.BadRequest,
-                    TimeStamp = DateTime.Now
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.USER_IS_NULL, HttpStatusCode.BadRequest, new List<string> { MessageConstantForUser.USER_IS_NULL });
             }
 
             var currentUserId = int.Parse(currentUser.FindFirst("Id")!.Value);
             if(currentUserId != user.Id || !currentUser.IsInRole(Roles.ROLE_ADMIN))
             {
-                return new ApiResponse<DataUserResponse>
-                {
-                    Data = null,
-                    Errors = new List<string> { "The user does not have permission to perform this function" },
-                    IsSuccess = false,
-                    Message = "The user does not have permission to perform this function",
-                    StatusCode = HttpStatusCode.Forbidden,
-                    TimeStamp = DateTime.Now
-                };
+                return ApiResponse<DataUserResponse>.Fail(MessageConstantForUser.UN_AUTHORIZED, HttpStatusCode.Forbidden, new List<string> { MessageConstantForUser.UN_AUTHORIZED });
             }
 
             user.IsDeleted = true;
@@ -253,15 +184,7 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
 
             await _userRepository.UpdateAsync(user);
 
-            return new ApiResponse<DataUserResponse>
-            {
-                Data = null,
-                Errors = [],
-                IsSuccess = true,
-                Message = "Account deleted successfully!",
-                StatusCode = HttpStatusCode.OK,
-                TimeStamp = DateTime.Now
-            };
+            return ApiResponse<DataUserResponse>.Success(UserMapping.EntityToDto(user), MessageConstantForUser.USER_DELETED);
         }
 
         /// <summary>
@@ -275,46 +198,24 @@ namespace PureCosmetics.AuthService.Application.ServiceImplements
             var validationResult = await validator.ValidateAsync(request);
             if (!validationResult.IsValid)
             {
-                return new ApiResponse<DataResponseLogin>
-                {
-                    IsSuccess = false,
-                    Message = "Validation errors",
-                    Errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList()
-                };
+                return ApiResponse<DataResponseLogin>.Fail(MessageConstantForUser.VALIDATION_ERROR, HttpStatusCode.BadRequest, validationResult.Errors.Select(e => e.ErrorMessage).ToList());
             }
 
             var checkUserName = await _userRepository.GetAsync(u => u.UserName == request.UserName || u.Email == request.UserName);
             if(checkUserName == null)
             {
-                return new ApiResponse<DataResponseLogin>
-                {
-                    IsSuccess = false,
-                    Message = "User not found.",
-                    Errors = new List<string> { "Invalid username or email." }
-                };
+                return ApiResponse<DataResponseLogin>.Fail(MessageConstantForUser.INVALID_USERNAME_OR_EMAIL, HttpStatusCode.BadRequest, new List<string> { MessageConstantForUser.INVALID_USERNAME_OR_EMAIL });
             }
 
             var verifyPassword = BCrypt.Net.BCrypt.Verify(request.Password, checkUserName.PasswordHash);
             if (!verifyPassword)
             {
-                return new ApiResponse<DataResponseLogin>
-                {
-                    IsSuccess = false,
-                    Message = "Incorrect password.",
-                    Errors = new List<string> { "Invalid password." }
-                };
+                return ApiResponse<DataResponseLogin>.Fail(MessageConstantForUser.INVALID_PASSWORD, HttpStatusCode.BadRequest, new List<string> { MessageConstantForUser.INVALID_PASSWORD });
             }
 
             var tokenResult = await GetJwtTokenAsync(checkUserName);
 
-            return new ApiResponse<DataResponseLogin>
-            {
-                IsSuccess = true,
-                StatusCode = HttpStatusCode.OK,
-                TimeStamp = DateTime.Now,
-                Message = "Login successful!",
-                Data = tokenResult
-            };
+            return ApiResponse<DataResponseLogin>.Success(tokenResult, MessageConstantForUser.LOGIN_SUCCESS);
         }
         #endregion
 

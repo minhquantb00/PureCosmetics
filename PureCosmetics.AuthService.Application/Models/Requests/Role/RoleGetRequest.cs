@@ -26,15 +26,5 @@ namespace PureCosmetics.AuthService.Application.Models.Requests.Role
         /// Keyword to search roles
         /// </summary>
         [ProtoMember(1)] public string? Keyword { get; set; }
-
-        /// <summary>
-        /// Page index for pagination
-        /// </summary>
-        [ProtoMember(2)] public int PageIndex { get; set; }
-
-        /// <summary>
-        /// Page size for pagination
-        /// </summary>
-        [ProtoMember(3)] public int PageSize { get; set; }
     }
 }
