@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{5F1BED1E-7098-42E6-8FB7-3D1825DADFD2}"
 EndProject
@@ -38,6 +38,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.EmailService.Api", "PureCosmetics.EmailService.Api\PureCosmetics.EmailService.Api.csproj", "{99A6BA16-10AB-497A-9931-B0EB08348201}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.EmailService.Application.Ports", "PureCosmetics.EmailService.Application.Ports\PureCosmetics.EmailService.Application.Ports.csproj", "{EBF52073-773C-4132-9EEC-79377EA70ABF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{B2C1659C-82BB-4577-8D9A-14BB93E0CE0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureCosmetics.Yarp.ApiGateway", "PureCosmetics.Yarp.ApiGateway\PureCosmetics.Yarp.ApiGateway.csproj", "{8998C724-A493-4848-AF46-5E889AC56789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,10 @@ Global
 		{EBF52073-773C-4132-9EEC-79377EA70ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBF52073-773C-4132-9EEC-79377EA70ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBF52073-773C-4132-9EEC-79377EA70ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8998C724-A493-4848-AF46-5E889AC56789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8998C724-A493-4848-AF46-5E889AC56789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8998C724-A493-4848-AF46-5E889AC56789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8998C724-A493-4848-AF46-5E889AC56789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,7 @@ Global
 		{55348598-DD70-46A5-9365-5276676A6BF0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{99A6BA16-10AB-497A-9931-B0EB08348201} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{EBF52073-773C-4132-9EEC-79377EA70ABF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8998C724-A493-4848-AF46-5E889AC56789} = {B2C1659C-82BB-4577-8D9A-14BB93E0CE0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13E497D0-50FC-4330-B2DE-FB4EE6990516}

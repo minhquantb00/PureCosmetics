@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MassTransit;
+using Microsoft.Extensions.DependencyInjection;
 using PureCosmetics.EmailService.Application.Ports.EventBus;
 using PureCosmetics.EmailService.Application.Ports.Providers;
 using PureCosmetics.EmailService.Domain.RepositoryContracts;
@@ -26,7 +27,19 @@ namespace PureCosmetics.EmailService.Infrastructure.DependencyInjections
             services.AddScoped<IInboxMessageRepository, InboxMessageRepository>();
             services.AddScoped<IEmailAttachmentRepository, EmailAttachmentRepository>();
             services.AddScoped<IEmailProvider, SmtpEmailProvider>();
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host("localhost", "/", h =>
+                    {
+                        h.Username("guest");
+                        h.Password("guest");
+                    });
+                });
+            });
             services.AddScoped<IEventBus, MassTransitEventBus>();
+            
             return services;
         }
     }
