@@ -19,5 +19,12 @@ namespace PureCosmetics.AuthService.Domain.Entities
             Code = code;
             Description = description;
         }
+
+        public void Change(string name, string code, string description)
+        {
+            Name = name;
+            Code = code;
+            Description = description;
+        }
     }
 }

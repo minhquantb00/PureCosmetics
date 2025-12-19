@@ -23,7 +23,8 @@ namespace PureCosmetics.AuthService.Application.Models
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
                 Message = message,
-                Data = data
+                Data = data,
+                TimeStamp = DateTime.Now
             };
         }
 
@@ -34,7 +35,8 @@ namespace PureCosmetics.AuthService.Application.Models
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.Created,
                 Message = message,
-                Data = data
+                Data = data,
+                TimeStamp = DateTime.Now
             };
         }
 
@@ -45,7 +47,8 @@ namespace PureCosmetics.AuthService.Application.Models
                 IsSuccess = false,
                 StatusCode = status,
                 Message = message,
-                Errors = errors ?? []
+                Errors = errors ?? [],
+                TimeStamp = DateTime.Now
             };
         }
 
@@ -56,7 +59,8 @@ namespace PureCosmetics.AuthService.Application.Models
                 IsSuccess = false,
                 StatusCode = HttpStatusCode.InternalServerError,
                 Message = "An unexpected error occurred.",
-                Errors = new List<string> { ex.Message, ex.StackTrace ?? "" }
+                Errors = new List<string> { ex.Message, ex.StackTrace ?? "" },
+                TimeStamp = DateTime.Now
             };
         }
     }
