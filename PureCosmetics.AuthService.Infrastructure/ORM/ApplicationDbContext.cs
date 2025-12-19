@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PureCosmetics.AuthService.Infrastructure.ORM
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext, IDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -19,6 +19,7 @@ namespace PureCosmetics.AuthService.Infrastructure.ORM
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,13 +48,27 @@ namespace PureCosmetics.AuthService.Infrastructure.ORM
                 .WithMany()
                 .HasForeignKey(x => x.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            modelBuilder.Entity<Address>()
+                .HasOne(x => x.User)
+                .WithMany()
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.UserName).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
             
             base.OnModelCreating(modelBuilder);
 
+        }
+
+        public async Task<int> CommitChangesAsync()
+        {
+            return await base.SaveChangesAsync();
+        }
+
+        public DbSet<TEntity> SetEntity<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
         }
     }
 }
