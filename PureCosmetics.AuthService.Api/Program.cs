@@ -98,6 +98,7 @@ builder.Services.AddOpenApi(options =>
         return Task.CompletedTask;
     });
 });
+builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
@@ -110,6 +111,7 @@ if (app.Environment.IsDevelopment())
     app.MapGrpcReflectionService();
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
@@ -118,5 +120,7 @@ app.UseAuthorization();
 app.MapGrpcService<UserService>();
 app.MapGrpcService<AddressService>();
 app.MapControllers();
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.Run();

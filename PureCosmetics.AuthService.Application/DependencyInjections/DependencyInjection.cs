@@ -36,6 +36,11 @@ namespace PureCosmetics.AuthService.Application.DependencyInjections
             services.AddScoped<IAddressService, AddressService>();
 
             /// <summary>
+            /// Interface role service
+            /// </summary>
+            services.AddScoped<IRoleService, RoleService>();
+
+            /// <summary>
             /// Return services
             /// </summary>
             return services;
