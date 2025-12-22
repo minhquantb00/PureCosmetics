@@ -19,6 +19,7 @@ namespace PureCosmetics.EmailService.Api
                 )
             );
             builder.Services.AddControllers();
+            builder.Services.AddSwaggerGen();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
@@ -36,6 +37,8 @@ namespace PureCosmetics.EmailService.Api
 
 
             app.MapControllers();
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.Run();
         }

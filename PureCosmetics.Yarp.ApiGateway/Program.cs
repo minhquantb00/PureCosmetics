@@ -5,11 +5,23 @@ builder.Services
     .AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "API Gateway running 🚀");
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.RoutePrefix = "swagger";
 
-// Map gateway
+    c.SwaggerEndpoint("/auth/swagger/v1/swagger.json", "Auth Service");
+    c.SwaggerEndpoint("/email/swagger/v1/swagger.json", "Email Service");
+});
+
+app.MapGet("/", () => "Gateway OK");
+
+
 app.MapReverseProxy();
 
 app.Run();
