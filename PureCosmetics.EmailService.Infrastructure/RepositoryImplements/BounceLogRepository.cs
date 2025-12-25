@@ -36,6 +36,15 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             return true;
         }
 
+        public async Task<IReadOnlyList<BounceLog>> GetBouncesByEmailAsync(string email, CancellationToken ct)
+        {
+            var result = await _context.BounceLogs
+                .Where(x => x.EmailAddress == email)
+                .ToListAsync(ct);
+
+            return result;
+        }
+
         public async Task UpdateAsync(BounceLog bounceLog)
         {
             _context.BounceLogs.Update(bounceLog);

@@ -12,5 +12,6 @@ namespace PureCosmetics.EmailService.Domain.RepositoryContracts
         Task CreateAsync(BounceLog bounceLog);
         Task UpdateAsync(BounceLog bounceLog);
         Task<bool> DeleteAsync(int id);
+        Task<IReadOnlyList<BounceLog>> GetBouncesByEmailAsync(string email, CancellationToken ct);
     }
 }

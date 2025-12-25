@@ -18,6 +18,13 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             _context = context;
         }
 
+        public async Task AddRangeAsync(IEnumerable<EmailAttachment> items, CancellationToken ct)
+        {
+            await _context.EmailAttachments.AddRangeAsync(items, ct);
+
+            await _context.SaveChangesAsync(ct);
+        }
+
         public async Task CreateAsync(EmailAttachment emailAttachment)
         {
             _context.EmailAttachments.Add(emailAttachment);
@@ -35,7 +42,6 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             }
             return false;
         }
-
         public async Task UpdateAsync(EmailAttachment emailAttachment)
         {
             _context.EmailAttachments.Update(emailAttachment);

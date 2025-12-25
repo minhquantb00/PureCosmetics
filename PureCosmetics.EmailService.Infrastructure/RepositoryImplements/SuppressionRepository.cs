@@ -40,10 +40,30 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
         => _context.Subpressions.AnyAsync(s => s.EmailAddress == email &&
             (s.ExpiresAt == null || s.ExpiresAt > DateTime.UtcNow), ct);
 
+        public  Task<bool> IsSuppressedAsync(string email, DateTime nowUtc, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task RemoveAsync(string email, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<Suppression>> SearchAsync(string? reason, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task UpdateAsync(Suppression suppression)
         {
             _context.Subpressions.Update(suppression);
             await _context.SaveChangesAsync();
+        }
+
+        public Task UpsertAsync(string email, string reason, string source, DateTime occurredAt, DateTime expiresAt, CancellationToken ct)
+        {
+            throw new NotImplementedException();
         }
     }
 }

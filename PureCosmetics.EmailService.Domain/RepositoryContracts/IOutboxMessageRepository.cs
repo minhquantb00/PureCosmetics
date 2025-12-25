@@ -12,5 +12,10 @@ namespace PureCosmetics.EmailService.Domain.RepositoryContracts
         Task CreateAsync(OutboxMessage outboxMessage);
         Task UpdateAsync(OutboxMessage outboxMessage);
         Task<bool> DeleteAsync(int id);
+        Task<IReadOnlyList<OutboxMessage>> GetUnpublishedAsync(int take, CancellationToken ct);
+
+        Task MarkPublishedAsync(long id, DateTime publishedAt, CancellationToken ct);
+
+        Task MarkPublishFailedAsync(long id, string error, CancellationToken ct);
     }
 }

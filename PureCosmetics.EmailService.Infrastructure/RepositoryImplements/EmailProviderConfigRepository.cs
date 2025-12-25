@@ -36,10 +36,60 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             return false;
         }
 
+        public async Task<EmailProviderConfig?> GetByNameAsync(string name, CancellationToken ct)
+        {
+            var entity = await _context.EmailProviderConfigs
+                .FirstOrDefaultAsync(x => x.Name == name, ct);
+
+            return entity;
+        }
+
+        public Task<EmailProviderConfig?> GetDefaultAsync(CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IReadOnlyList<EmailProviderConfig>> GetEnabledAsync(CancellationToken ct)
+        {
+            var result = await _context.EmailProviderConfigs
+                .Where(x => x.Enabled)
+                .ToListAsync(ct);
+
+            return result;
+        }
+
+        public async Task SetDefaultAsync(int id, CancellationToken ct)
+        {
+            var entity = await _context.EmailProviderConfigs
+                .FirstOrDefaultAsync(x => x.Id == id, ct);
+            if(entity == null)
+            {
+                throw new Exception($"EmailProviderConfig with Id {id} not found.");
+            }
+
+            entity.IsDefault = true;
+            _context.EmailProviderConfigs.Update(entity);
+            await _context.SaveChangesAsync(ct);
+        }
+
         public async Task UpdateAsync(EmailProviderConfig emailProviderConfig)
         {
             _context.EmailProviderConfigs.Update(emailProviderConfig);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateSettingsAsync(int id, string settingsJson, CancellationToken ct)
+        {
+            var entity = await _context.EmailProviderConfigs
+                .FirstOrDefaultAsync(x => x.Id == id, ct);
+            if (entity == null)
+            {
+                throw new Exception($"EmailProviderConfig with Id {id} not found.");
+            }
+
+            entity.SettingsJson = settingsJson;
+            _context.EmailProviderConfigs.Update(entity);
+            await _context.SaveChangesAsync(ct);
         }
     }
 }

@@ -36,6 +36,26 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             return false;
         }
 
+        public Task<IReadOnlyList<InboxMessage>> GetFailedAsync(string take, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task MarkFailedAsync(string dedupKey, string error, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task MarkProcessedAsync(string dedupKey, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> TryBeginAsync(string messageType, string dedupKey, string correlationId, string payloadJson, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task UpdateAsync(InboxMessage inboxMessage)
         {
             _context.InboxMessages.Update(inboxMessage);

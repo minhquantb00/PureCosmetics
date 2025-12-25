@@ -18,6 +18,11 @@ namespace PureCosmetics.EmailService.Infrastructure.RepositoryImplements
             _context = context;
         }
 
+        public Task AddNewVersionAsync(EmailTemplate tpl, CancellationToken ct)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task CreateAsync(EmailTemplate emailTemplate)
         {
             _context.EmailTemplates.Add(emailTemplate);

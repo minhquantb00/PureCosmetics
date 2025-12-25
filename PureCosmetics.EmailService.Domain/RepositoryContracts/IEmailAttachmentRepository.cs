@@ -12,5 +12,7 @@ namespace PureCosmetics.EmailService.Domain.RepositoryContracts
         Task CreateAsync(EmailAttachment emailAttachment);
         Task UpdateAsync(EmailAttachment emailAttachment);
         Task<bool> DeleteAsync(int id);
+
+        Task AddRangeAsync(IEnumerable<EmailAttachment> items, CancellationToken ct);
     }
 }
